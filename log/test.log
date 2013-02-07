@@ -1,0 +1,215 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("created_at", "updated_at", "email", "last_name", "first_name", "id") VALUES ('2013-02-07 07:34:38', '2013-02-07 07:34:38', 'MyString', 'MyString', 'MyString', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("created_at", "updated_at", "email", "last_name", "first_name", "id") VALUES ('2013-02-07 07:34:38', '2013-02-07 07:34:38', 'MyString', 'MyString', 'MyString', 980190962)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "id", "email", "last_name", "updated_at", "created_at") VALUES ('MyString', 298486374, 'MyString', 'MyString', '2013-02-07 07:35:33', '2013-02-07 07:35:33')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "id", "email", "last_name", "updated_at", "created_at") VALUES ('MyString', 980190962, 'MyString', 'MyString', '2013-02-07 07:35:33', '2013-02-07 07:35:33')
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("updated_at", "email", "id", "created_at", "last_name", "first_name") VALUES ('2013-02-07 07:35:49', 'MyString', 298486374, '2013-02-07 07:35:49', 'MyString', 'MyString')[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("updated_at", "email", "id", "created_at", "last_name", "first_name") VALUES ('2013-02-07 07:35:49', 'MyString', 980190962, '2013-02-07 07:35:49', 'MyString', 'MyString')
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("email", "first_name", "last_name", "id", "created_at", "updated_at") VALUES ('MyString', 'MyString', 'MyString', 298486374, '2013-02-07 07:39:53', '2013-02-07 07:39:53')[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("email", "first_name", "last_name", "id", "created_at", "updated_at") VALUES ('MyString', 'MyString', 'MyString', 980190962, '2013-02-07 07:39:53', '2013-02-07 07:39:53')
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 08:17:48', '2013-02-07 08:17:48', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 08:17:48', '2013-02-07 08:17:48', 298486374)
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 08:18:39', '2013-02-07 08:18:39', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 08:18:39', '2013-02-07 08:18:39', 298486374)
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.3ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 18:27:32', '2013-02-07 18:27:32', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 18:27:32', '2013-02-07 18:27:32', 298486374)
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (2.4ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:01:53', '2013-02-07 20:01:53', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:01:53', '2013-02-07 20:01:53', 298486374)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.8ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:02:36', '2013-02-07 20:02:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:02:36', '2013-02-07 20:02:36', 298486374)
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (2.3ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'richardnixon.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:06:09', '2013-02-07 20:06:09', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:06:09', '2013-02-07 20:06:09', 298486374)
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (2.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'richardnixon.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:06:48', '2013-02-07 20:06:48', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:06:48', '2013-02-07 20:06:48', 298486374)
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (2.3ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'richard@nixon.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:07:11', '2013-02-07 20:07:11', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:07:11', '2013-02-07 20:07:11', 298486374)
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'richard@nixon.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:11:56', '2013-02-07 20:11:56', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:11:56', '2013-02-07 20:11:56', 298486374)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.3ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:12:17', '2013-02-07 20:12:17', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:12:17', '2013-02-07 20:12:17', 298486374)
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "entries"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:12:19', '2013-02-07 20:12:19', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-02-07 20:12:19', '2013-02-07 20:12:19', 298486374)
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (3.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"email"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'MyString' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered entries/_form.html.slim (96.8ms)
+  Rendered entries/new.html.slim within layouts/application (130.4ms)
+Completed 200 OK in 175ms (Views: 145.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (5.6ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" [0m
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (4.7ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'MyString' AND "entries"."id" != 980190962) LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered entries/_form.html.slim (6.4ms)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
