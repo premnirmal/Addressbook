@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  first_name: Homer
+  last_name: Simpson
+  email: homer@simpsonsfamily.org
 
 two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  first_name: Homer
+  last_name: Simpson
+  email: homer@simpsons.com
+
+homer_simpson_ok:
+  first_name: Homer
+  last_name: Simpson
+  email: homersimpson@gmail.com

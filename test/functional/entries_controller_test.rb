@@ -3,6 +3,11 @@ require 'test_helper'
 class EntriesControllerTest < ActionController::TestCase
   setup do
     @entry = entries(:one)
+    @update = { # added according to pg 94 of AWDWR
+      :first_name  =>  "Barack",
+      :last_name  =>  "Obama",
+      :email  =>  "barack@demo.com"
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,8 @@ class EntriesControllerTest < ActionController::TestCase
 
   test "should create entry" do
     assert_difference('Entry.count') do
-      post :create, :entry => { :email => @entry.email, :first_name => @entry.first_name, :last_name => @entry.last_name }
+      #post :create, :entry => { :email => @entry.email, :first_name => @entry.first_name, :last_name => @entry.last_name }
+      post :create, :entry => @update
     end
 
     assert_redirected_to entry_path(assigns(:entry))

@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class EntryTest < ActiveSupport::TestCase
+	fixtures :entries # load entries fixtures (entires.yml)
+
+	# test all entries are non-empty
 	test "All Entry attributes must not be empty" do
 		entry = Entry.new
 		assert entry.invalid?
@@ -9,38 +12,21 @@ class EntryTest < ActiveSupport::TestCase
   		assert entry.errors[:email].any?
 	end
 
-	test "Email must be valid" do
-		entry = Entry.new(:first_name => "Richard",
-						:last_name => "Nixon")
-		
-
+	test "Entry is not valid without a unique email" do
+		entry = Entry.new(:email => entries(:homer_simpson_ok).email,
+        	                :first_name => "Marge",
+            	            :last_name => "Simpson")                	        
+  		refute entry.save
+  		assert_equal "has already been taken", entry.errors[:email].join('; ')
 	end
+
+	test "Email invalid" do
+		entry = Entry.new(last_name: "Last",
+                      first_name: "First")
+    	entry.email = "xyz.com"
+    	refute entry.valid?
+    	assert_equal "Must be a valid email address!", entry.errors[:email].join('; ')
+    	entry.email = "xyz@xyz.com"
+    	assert entry.valid?
+  	end
 end
-
-		# entry.email = "richardnixon.com"
-		# assert entry.invalid?
-		# assert_equal "Must be a correct format of email, with an '@' symbol",
-		# 	entry.errors[:email].join('; ')
-
-		# entry.email = "richardnixon"
-		# assert entry.invalid?
-		# assert_equal "Must be a correct format of email, with an '@' symbol",
-		# 	entry.errors[:email].join('; ')
-
-		# entry.email = "richard@nixon"
-		# assert entry.invalid?
-		# assert_equal "Must be a correct format of email, with an '@' symbol",
-		# 	entry.errors[:email].join('; ')
-
-		# entry.email = "@nixon.com"
-		# assert entry.invalid?
-		# assert_equal "Must be a correct format of email, with an '@' symbol",
-		# 	entry.errors[:email].join('; ')
-
-		# entry.email = "richard@"
-		# assert entry.invalid?
-		# assert_equal "Must be a correct format of email, with an '@' symbol",
-		# 	entry.errors[:email].join('; ')
-
-		# entry.email = "richard@nixon.com"
-		# assert entry.valid?
