@@ -7,4 +7,5 @@ class Entry < ActiveRecord::Base
   	#regular expression to validate email http://rawsyntax.com/blog/rails-3-email-validation/
   	:message => 'Must be a valid email address!'
   }
+  has_many :addresses, :dependent => :destroy
 end
