@@ -11,5 +11,7 @@ p
   = @entry.email
 
 = link_to 'Edit', edit_entry_path(@entry)
-'|
+'   |   
+= link_to 'Show Addresses', entry_addresses_path(@entry)
+'   |   
 = link_to 'Back', entries_path

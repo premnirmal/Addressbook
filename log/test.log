@@ -3405,3 +3405,124 @@ Processing by EntriesController#update as HTML
 Redirected to http://test.host/entries/980190962
 Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-14 20:48:45', '2013-02-14 20:48:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-14 20:48:45', '2013-02-14 20:48:45', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-14 20:48:46', '2013-02-14 20:48:46', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-14 20:48:46', '2013-02-14 20:48:46', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-14 20:48:46', '2013-02-14 20:48:46', 593734281)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (1.3ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-14 20:48:47', '2013-02-14 20:48:47', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-14 20:48:47', '2013-02-14 20:48:47', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-14 20:48:48', '2013-02-14 20:48:48', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-14 20:48:48', '2013-02-14 20:48:48', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-14 20:48:48', '2013-02-14 20:48:48', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (1.9ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 14 Feb 2013 20:48:48 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Thu, 14 Feb 2013 20:48:48 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 36ms (ActiveRecord: 2.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 21ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (81.4ms)
+Completed 200 OK in 132ms (Views: 131.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (3.9ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m

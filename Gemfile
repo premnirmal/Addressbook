@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '~> 3.2'
 gem 'slim'
 gem 'simple_form'
 gem "email-validator", "~> 0.2.3"

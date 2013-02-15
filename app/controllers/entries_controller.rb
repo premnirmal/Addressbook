@@ -1,35 +1,24 @@
 class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
+  respond_to :html
   def index
     @entries = Entry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @entries }
-    end
+    respond_with {(@entries)}
   end
 
   # GET /entries/1
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @entry }
-    end
+    respond_with {(@entry)}
   end
 
   # GET /entries/new
   # GET /entries/new.json
   def new
     @entry = Entry.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render :json => @entry }
-    end
+    respond_with {(@entry)}
   end
 
   # GET /entries/1/edit
@@ -41,23 +30,14 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(params[:entry])
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, :notice => 'Entry was successfully created.' }
-        format.json { render :json => @entry, :status => :created, :location => @entry }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @entry.errors, :status => :unprocessable_entity }
-      end
-    end
+    flash[:notice] = "Entry created" if @entry.save
+    respond_with(@entry)
   end
 
   # PUT /entries/1
   # PUT /entries/1.json
   def update
     @entry = Entry.find(params[:id])
-
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         format.html { redirect_to @entry, :notice => 'Entry was successfully updated.' }
@@ -74,7 +54,6 @@ class EntriesController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     @entry.destroy
-
     respond_to do |format|
       format.html { redirect_to entries_url }
       format.json { head :no_content }

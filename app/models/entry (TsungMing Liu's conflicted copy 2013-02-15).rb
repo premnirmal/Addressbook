@@ -1,6 +1,5 @@
 class Entry < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name
-  has_many :addresses, :dependent => :destroy
   validates :first_name, :last_name, :email, :presence => true
   validates :email, :uniqueness => true,
   	:format => {
@@ -8,4 +7,5 @@ class Entry < ActiveRecord::Base
   	#regular expression to validate email http://rawsyntax.com/blog/rails-3-email-validation/
   	:message => 'Must be a valid email address!'
   }
+  has_many :addresses, :dependent => :destroy
 end

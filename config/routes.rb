@@ -1,14 +1,9 @@
 Addressbook::Application.routes.draw do
-  resources :addresses
-  # default route to index.html.slim in entries view
-  get "entries/index"
   root :to => 'entries#index'
-  resources :entries
 
-# migration
-resource :entries do
-  resource :addresses
-end
+  resources :entries do
+    resources :addresses
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
