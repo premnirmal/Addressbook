@@ -13,6 +13,6 @@ p
   strong Zip:
   = @addresses.zip
 
-= link_to 'Edit', edit_entry_address_path(@addresses,@entry)
+= link_to 'Edit', edit_entry_address_path(@entry,@addresses)
 '   |   
 = link_to 'Back', entry_addresses_path
