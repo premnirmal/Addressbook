@@ -3526,3 +3526,1245 @@ Processing by EntriesController#update as HTML
 Redirected to http://test.host/entries/980190962
 Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-22 16:21:11', '2013-02-22 16:21:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-22 16:21:11', '2013-02-22 16:21:11', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:21:11', '2013-02-22 16:21:11', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:21:11', '2013-02-22 16:21:11', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:21:11', '2013-02-22 16:21:11', 593734281)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (2.4ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:21:11 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:21:11 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 61ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 56ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (108.5ms)
+Completed 200 OK in 145ms (Views: 143.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (3.9ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-22 16:21:47', '2013-02-22 16:21:47', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'MyString', 1, '2013-02-22 16:21:47', '2013-02-22 16:21:47', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:21:47', '2013-02-22 16:21:47', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:21:47', '2013-02-22 16:21:47', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:21:47', '2013-02-22 16:21:47', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (3.5ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:21:47 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:21:47 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 62ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 51ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (116.9ms)
+Completed 200 OK in 151ms (Views: 149.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (4.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:24:46', '2013-02-22 16:24:46', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:24:46', '2013-02-22 16:24:46', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:24:46', '2013-02-22 16:24:46', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:24:46', '2013-02-22 16:24:46', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:24:46', '2013-02-22 16:24:46', 593734281)
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (1.8ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:24:46 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:24:46 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 59ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 47ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (120.7ms)
+Completed 200 OK in 154ms (Views: 152.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (4.6ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:25:13', '2013-02-22 16:25:13', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:25:13', '2013-02-22 16:25:13', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:25:13', '2013-02-22 16:25:13', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:25:13', '2013-02-22 16:25:13', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:25:13', '2013-02-22 16:25:13', 593734281)
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (2.8ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 593734281]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:25:15', '2013-02-22 16:25:15', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:25:15', '2013-02-22 16:25:15', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:25:15', '2013-02-22 16:25:15', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:25:15', '2013-02-22 16:25:15', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:25:15', '2013-02-22 16:25:15', 593734281)
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (2.0ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:25:15 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:25:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 70ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 57ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (111.7ms)
+Completed 200 OK in 142ms (Views: 140.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (3.9ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:27:29', '2013-02-22 16:27:29', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:27:29', '2013-02-22 16:27:29', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:27:29', '2013-02-22 16:27:29', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:27:29', '2013-02-22 16:27:29', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:27:29', '2013-02-22 16:27:29', 593734281)
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (1.5ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "addresses" ("city", "created_at", "entry_id", "state", "street", "updated_at", "zip") VALUES (?, ?, ?, ?, ?, ?, ?)  [["city", nil], ["created_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00], ["entry_id", 980190963], ["state", "DC"], ["street", nil], ["updated_at", Fri, 22 Feb 2013 16:27:29 UTC +00:00], ["zip", 0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:27:32', '2013-02-22 16:27:32', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:27:32', '2013-02-22 16:27:32', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:27:32', '2013-02-22 16:27:32', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:27:32', '2013-02-22 16:27:32', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:27:32', '2013-02-22 16:27:32', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (2.5ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:27:33 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:27:33 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 67ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 51ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (112.3ms)
+Completed 200 OK in 143ms (Views: 141.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (12.0ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:28:46', '2013-02-22 16:28:46', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:28:46', '2013-02-22 16:28:46', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:28:47', '2013-02-22 16:28:47', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:28:47', '2013-02-22 16:28:47', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:28:47', '2013-02-22 16:28:47', 593734281)
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (1.4ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:28:47 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 593734281]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:28:49', '2013-02-22 16:28:49', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:28:49', '2013-02-22 16:28:49', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:28:49', '2013-02-22 16:28:49', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:28:49', '2013-02-22 16:28:49', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:28:49', '2013-02-22 16:28:49', 593734281)
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (1.7ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:28:49 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:28:49 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 69ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 44ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (100.8ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (3.9ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:30:21', '2013-02-22 16:30:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:30:21', '2013-02-22 16:30:21', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:30:21', '2013-02-22 16:30:21', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:30:21', '2013-02-22 16:30:21', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:30:21', '2013-02-22 16:30:21', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.5ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:30:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 593734281]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:31:20', '2013-02-22 16:31:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:31:20', '2013-02-22 16:31:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:31:20', '2013-02-22 16:31:20', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:31:20', '2013-02-22 16:31:20', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:31:20', '2013-02-22 16:31:20', 593734281)
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:31:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 593734281]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:32:54', '2013-02-22 16:32:54', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:32:54', '2013-02-22 16:32:54', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:32:54', '2013-02-22 16:32:54', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:32:54', '2013-02-22 16:32:54', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:32:54', '2013-02-22 16:32:54', 593734281)
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:32:54 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:34:20', '2013-02-22 16:34:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:34:20', '2013-02-22 16:34:20', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:34:21', '2013-02-22 16:34:21', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:34:21', '2013-02-22 16:34:21', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:34:21', '2013-02-22 16:34:21', 593734281)
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.4ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:34:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:35:35', '2013-02-22 16:35:35', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:35:35', '2013-02-22 16:35:35', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:35:35', '2013-02-22 16:35:35', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:35:35', '2013-02-22 16:35:35', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:35:35', '2013-02-22 16:35:35', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.3ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:35:35 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:39:06', '2013-02-22 16:39:06', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:39:06', '2013-02-22 16:39:06', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:39:07', '2013-02-22 16:39:07', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:39:07', '2013-02-22 16:39:07', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:39:07', '2013-02-22 16:39:07', 593734281)
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (1.9ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:07 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:39:48', '2013-02-22 16:39:48', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:39:48', '2013-02-22 16:39:48', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:39:48', '2013-02-22 16:39:48', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:39:48', '2013-02-22 16:39:48', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:39:48', '2013-02-22 16:39:48', 593734281)
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.7ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:39:48 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:40:00', '2013-02-22 16:40:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:40:00', '2013-02-22 16:40:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:40:00', '2013-02-22 16:40:00', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:40:00', '2013-02-22 16:40:00', 298486374)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:40:00', '2013-02-22 16:40:00', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.3ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:40:00 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.3ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'NY', 1, '2013-02-22 16:40:03', '2013-02-22 16:40:03', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip", "created_at", "updated_at", "id") VALUES ('MyText', 'MyString', 'CA', 1, '2013-02-22 16:40:03', '2013-02-22 16:40:03', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:40:03', '2013-02-22 16:40:03', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:40:03', '2013-02-22 16:40:03', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:40:03', '2013-02-22 16:40:03', 593734281)
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (2.4ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "addresses" 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 16:40:03 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:40:03 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 93ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "entries" WHERE "entries"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries
+Completed 302 Found in 56ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (106.8ms)
+Completed 200 OK in 134ms (Views: 133.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" 
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (5.7ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.8ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:44:29', '2013-02-22 16:44:29', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:44:29', '2013-02-22 16:44:29', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:44:29', '2013-02-22 16:44:29', 593734281)
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (2.4ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@democrat.org' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00], ["email", "jfk@democrat.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@nwo.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00], ["email", "jfk@nwo.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'jfk@whitehouse.org' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00], ["email", "jfk@whitehouse.org"], ["first_name", "John"], ["last_name", "Kennedy"], ["updated_at", Fri, 22 Feb 2013 16:44:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz.com' LIMIT 1
+  [1m[36mEntry Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'xyz@xyz.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 593734281]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'homersimpson@gmail.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (2.7ms)[0m  DELETE FROM "addresses"
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "entries"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsonsfamily.org', '2013-02-22 16:44:32', '2013-02-22 16:44:32', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homer@simpsons.com', '2013-02-22 16:44:32', '2013-02-22 16:44:32', 298486374)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "entries" ("first_name", "last_name", "email", "created_at", "updated_at", "id") VALUES ('Homer', 'Simpson', 'homersimpson@gmail.com', '2013-02-22 16:44:32', '2013-02-22 16:44:32', 593734281)
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (2.8ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "entries" 
+Processing by EntriesController#create as HTML
+  Parameters: {"entry"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email"=>"barack@demo.com"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.2ms)[0m  SELECT 1 AS one FROM "entries" WHERE "entries"."email" = 'barack@demo.com' LIMIT 1
+  [1m[36mSQL (3.2ms)[0m  [1mINSERT INTO "entries" ("created_at", "email", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 16:44:33 UTC +00:00], ["email", "barack@demo.com"], ["first_name", "Barack"], ["last_name", "Obama"], ["updated_at", Fri, 22 Feb 2013 16:44:33 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries/980190963
+Completed 302 Found in 96ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.2ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+Processing by EntriesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE "addresses"."entry_id" = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "entries" WHERE "entries"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/entries
+Completed 302 Found in 36ms (ActiveRecord: 1.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "entries" [0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered entries/_form.html.slim (120.8ms)
+Completed 200 OK in 184ms (Views: 182.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#index as HTML
+  [1m[36mEntry Load (0.2ms)[0m  [1mSELECT "entries".* FROM "entries" [0m
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by EntriesController#new as HTML
+  Rendered entries/_form.html.slim (4.3ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by EntriesController#update as HTML
+  Parameters: {"entry"=>{"email"=>"homer@simpsonsfamily.org", "first_name"=>"Homer", "last_name"=>"Simpson"}, "id"=>"980190962"}
+  [1m[35mEntry Load (0.1ms)[0m  SELECT "entries".* FROM "entries" WHERE "entries"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mEntry Exists (0.1ms)[0m  SELECT 1 AS one FROM "entries" WHERE ("entries"."email" = 'homer@simpsonsfamily.org' AND "entries"."id" != 980190962) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/entries/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

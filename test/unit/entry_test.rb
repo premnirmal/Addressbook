@@ -8,8 +8,8 @@ class EntryTest < ActiveSupport::TestCase
 		entry = Entry.new
 		assert entry.invalid?
 		assert entry.errors[:first_name].any?
-  		assert entry.errors[:last_name].any?
-  		assert entry.errors[:email].any?
+    assert entry.errors[:last_name].any?
+  	assert entry.errors[:email].any?
 	end
 
 	test "Entry is not valid without a unique email" do

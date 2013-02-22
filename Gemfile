@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3.2'
 gem 'slim'
 gem 'simple_form'
-gem "email-validator", "~> 0.2.3"
+gem 'email-validator', '~> 0.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
