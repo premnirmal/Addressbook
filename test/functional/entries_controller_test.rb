@@ -2,8 +2,8 @@ require 'test_helper'
 
 class EntriesControllerTest < ActionController::TestCase
   setup do
-    @entry = entries(:one)
-    @update = { # added according to pg 94 of AWDWR
+    @entry = entries(:two)
+    @update = { # added according to pg 94 of AWDR
       :first_name  =>  "Barack",
       :last_name  =>  "Obama",
       :email  =>  "barack@demo.com"
@@ -41,7 +41,7 @@ class EntriesControllerTest < ActionController::TestCase
   end
 
   test "should update entry" do
-    put :update, :id => @entry, :entry => { :email => @entry.email, :first_name => @entry.first_name, :last_name => @entry.last_name }
+    put :update, :id => @entry, :entry => @update #:entry => { :email => @entry.email, :first_name => @entry.first_name, :last_name => @entry.last_name }
     assert_redirected_to entry_path(assigns(:entry))
   end
 
