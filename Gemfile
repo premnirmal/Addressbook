@@ -4,6 +4,7 @@ gem 'rails', '~> 3.2'
 gem 'slim'
 gem 'simple_form'
 gem 'email-validator', '~> 0.2.3'
+gem 'simplecov', :require => false, :group => :test
 #gem 'nester'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -20,7 +21,6 @@ end
 
 group :test do
 	gem 'minitest-reporters'
-  gem 'simplecov'
 end
 
 gem 'json'
