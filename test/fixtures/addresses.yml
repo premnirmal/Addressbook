@@ -5,11 +5,11 @@ one:
   city: MyString
   state: NY
   zip: 1
-  entry: 
+  entry: one
 
 two:
   street: MyText
   city: MyString
   state: CA
   zip: 1
-  entry: 
+  entry: two

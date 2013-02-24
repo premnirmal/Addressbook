@@ -1,14 +1,19 @@
 require 'test_helper'
 
 class AddressesControllerTest < ActionController::TestCase
+  include Nester::TestCase
+  nest :address, :under => :entry
+
   setup do
     @address = addresses(:one)
+    @entry = entries(:one)
+    @address.entry = @entry
   end
 
   test "should get index" do
-    get :index
+    get :index, :entry_id => 1
     assert_response :success
-    assert_not_nil assigns(:addresses)
+    assert_not_nil assigns(:address)
   end
 
   test "should get new" do
@@ -44,6 +49,6 @@ class AddressesControllerTest < ActionController::TestCase
       delete :destroy, id: @address
     end
 
-    assert_redirected_to addresses_path
+    assert_redirected_to entry_addresses_path
   end
 end

@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class AddressTest < ActiveSupport::TestCase
-  
+  	fixtures :entries
+  	fixtures :addresses
+	
 	#test zip code must not be empty
 	test "zip code must not be empty" do
 		entry = Entry.new(:email => "jfk@whitehouse.org",
