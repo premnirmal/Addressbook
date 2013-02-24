@@ -1,5 +1,6 @@
 require 'simplecov'
 SimpleCov.start
+SimpleCov.minimum_coverage 90
 
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
