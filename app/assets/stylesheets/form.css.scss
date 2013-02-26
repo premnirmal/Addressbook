@@ -18,7 +18,8 @@ pre{background-color:#eee;padding:10px;font-size:11px}
 a{color:#008080}a:visited{color:#808080}
 a:hover{color:#fff;background-color:#000}
 table { margin: 1em; border-collapse: collapse; }
-td, th { padding: .3em; border: 1px #ccc solid; }
+td { padding: .3em; border: 1px #ccc solid; }
+th { padding: .3em; border: 0px solid; }
 
 div.field,div.actions{margin-bottom:10px}#notice{color:green}
 .field_with_errors{padding:2px;background-color:red;display:table}
