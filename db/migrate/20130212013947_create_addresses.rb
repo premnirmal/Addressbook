@@ -4,7 +4,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.text :street
       t.string :city
       t.string :state, :limit => 2
-      t.integer :zip
+      t.integer :zip, :numericality => { :greater_than => 0 }
       t.integer :AddressType
       t.references :entry
 
