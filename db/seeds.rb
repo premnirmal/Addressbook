@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+
+AddressType.delete_all
+AddressType.create(:name => 'Home')
+AddressType.create(:name => 'Work')
+AddressType.create(:name => 'Other')

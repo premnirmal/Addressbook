@@ -1,17 +1,17 @@
-h1 Listing addresses
+h1 #{@entry.first_name} #{@entry.last_name}'s addresses
 
 table
   tr
+    th Type
     th Street
     th City
     th State
     th Zip
-    th
-    th
-    th
+
 
   - @entry.addresses.each do |address|
     tr
+      td = AddressType.find(address.AddressType).name
       td = address.street
       td = address.city
       td = address.state
@@ -21,6 +21,6 @@ table
       td = link_to 'Destroy', entry_address_path(@entry,address), :confirm => 'Are you sure?', :method => :delete
 
 br
-= link_to 'BACK', entry_path(@entry)
+= link_to 'Back', entry_path(@entry)
 '   |    
 = link_to 'New Address', new_entry_address_path

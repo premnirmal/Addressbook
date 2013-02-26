@@ -2,6 +2,7 @@
   = f.error_notification
 
   .form-inputs
+    = f.collection_select( :AddressType, AddressType.all, :id, :name, :prompt => false, :selected => 1)
     = f.input :street
     = f.input :city
     = f.input :state

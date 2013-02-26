@@ -5,6 +5,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :city
       t.string :state, :limit => 2
       t.integer :zip
+      t.integer :AddressType
       t.references :entry
 
       t.timestamps

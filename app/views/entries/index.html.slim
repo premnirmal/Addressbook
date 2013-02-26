@@ -1,17 +1,16 @@
 h1 CISC-5030-NIRMAL-ADDRESSBOOK
-h2 Listing all entries in address book
+h2 Listing all entries in addressbook
 
 table
   tr
+    th Title
     th First name
     th Last name
     th Email
-    th
-    th
-    th
-
+    
   - @entries.each do |entry|
     tr
+      td = entry.title
       td = entry.first_name
       td = entry.last_name
       td = entry.email

@@ -11,16 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212013947) do
+ActiveRecord::Schema.define(:version => 20130212013948) do
+
+  create_table "address_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "addresses", :force => true do |t|
     t.text     "street"
     t.string   "city"
-    t.string   "state",      :limit => 2
+    t.string   "state",       :limit => 2
     t.integer  "zip"
+    t.integer  "AddressType"
     t.integer  "entry_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   add_index "addresses", ["entry_id"], :name => "index_addresses_on_entry_id"
@@ -29,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130212013947) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

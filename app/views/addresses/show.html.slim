@@ -1,16 +1,20 @@
+h2 Address for #{@entry.first_name} #{@entry.last_name}
 p#notice = notice
 
 p
-  strong Street:
+  strong AddressType: 
+  = AddressType.find(@addresses.AddressType).name
+p
+  strong Street: 
   = @addresses.street
 p
-  strong City:
+  strong City: 
   = @addresses.city
 p
-  strong State:
+  strong State: 
   = @addresses.state
 p
-  strong Zip:
+  strong Zip: 
   = @addresses.zip
 
 = link_to 'Edit', edit_entry_address_path(@entry,@addresses)

@@ -1,6 +1,6 @@
 class Address < ActiveRecord::Base
   belongs_to :entry
-  attr_accessible :city, :state, :street, :zip, :entry_id
+  attr_accessible :city, :state, :street, :zip, :entry_id, :AddressType
   #validates :city, :state, :street, :zip, :presence => true
   validates :zip, :presence => true
   validates_numericality_of :zip

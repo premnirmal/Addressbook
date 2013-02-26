@@ -1,0 +1,130 @@
+/** MAIN PAGE **/
+.whole{position:relative}
+h1{position:relative;text-align:center;
+	width:auto;border:2px solid gray;
+	padding:0.5em;color:blue; font-family: gill sans;}
+.main{position:relative;border-radius:1em;
+	border:2px dotted gray;padding:0.5em;
+	box-shadow:6px 6px 6px yellow}
+.footer{position:relative;text-align:center;
+	width:10em;border-radius:1em;border:2px dotted gray;
+	padding:0.5em}
+body{background-color:#fff;color:#333;
+	font-family:georgia,arial,helvetica,sans-serif;
+	font-size:13px;line-height:18px}
+p,ol,ul,td{font-family:courier,arial,helvetica,sans-serif;
+	font-size:15px;line-height:18px}
+pre{background-color:#eee;padding:10px;font-size:11px}
+a{color:#008080}a:visited{color:#808080}
+a:hover{color:#fff;background-color:#000}
+table { margin: 1em; border-collapse: collapse; }
+td, th { padding: .3em; border: 1px #ccc solid; }
+
+div.field,div.actions{margin-bottom:10px}#notice{color:green}
+.field_with_errors{padding:2px;background-color:red;display:table}
+#error_explanation{width:450px;border:2px solid red;padding:7px;
+	padding-bottom:20px;margin-bottom:20px;background-color:#f0f0f0}
+#error_explanation h2{text-align:left;font-weight:bold;
+	padding:5px 5px 5px 15px;font-size:12px;margin:-7px;
+	margin-bottom:0px;background-color:#c00;color:#fff}
+#error_explanation ul li{font-size:12px;list-style:square}
+
+/**** SIMPLE FORM ****/
+
+input, textarea {
+background:url(back.jpg) repeat-x #93e1ff;
+border:1px solid #848383;
+width:220px; padding:5px;
+color:#006;
+font-weight:bold;
+-webkit-border-radius:5px;
+-moz-border-radius:5px
+}
+input:focus, textarea:focus {background:url(backRoll.jpg) repeat-x #86cee9;}
+
+.submit {
+width:100px;
+background-color:#C0C0C0;
+border:1px solid #848383;
+cursor:pointer;
+*border:1px;
+color:#006;
+font-weight:bold;
+-webkit-border-radius:5px;
+-moz-border-radius:5px
+}
+
+.submit:hover {background:url(backRoll.jpg) repeat-x #86cee9;
+color:#006; font-weight:bold}
+
+/* ------------------------------------- */
+.simple_form {
+  div.input {
+    margin-bottom: 10px;
+    clear: both;
+    /* Required for Webkit, but not for Gecko */
+  }
+  label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin: 2px 10px;
+  }
+}
+
+div.boolean, .simple_form input[type='submit'] {
+  margin-left: 120px;
+  color: #000;
+  background-color: #C0C0C0;
+}
+
+div.boolean label {
+  float: none;
+  margin: 0;
+}
+
+label.collection_radio_buttons {
+  float: none;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: -2px;
+  margin-left: 2px;
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form {
+  .error {
+    clear: left;
+    color: black;
+    display: block;
+    margin-left: 120px;
+  }
+  .hint {
+    clear: left;
+    margin-left: 120px;
+    color: #555;
+    display: block;
+    font-style: italic;
+  }
+}
+
+input {
+  &.radio {
+    margin-right: 5px;
+    vertical-align: -3px;
+  }
+  &.check_boxes {
+    margin-left: 3px;
+    vertical-align: -3px;
+  }
+}
+
+label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}

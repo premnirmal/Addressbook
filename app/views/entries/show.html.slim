@@ -1,13 +1,17 @@
 p#notice = notice
 h1 Show record
+
 p
-  strong First name:
+  strong Title: 
+  = @entry.title
+p
+  strong First name: 
   = @entry.first_name
 p
-  strong Last name:
+  strong Last name: 
   = @entry.last_name
 p
-  strong Email:
+  strong Email: 
   = @entry.email
 
 = link_to 'Edit', edit_entry_path(@entry)
