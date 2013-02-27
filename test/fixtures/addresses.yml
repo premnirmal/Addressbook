@@ -6,6 +6,7 @@ one:
   state: NY
   zip: 1
   entry: one
+  #AddressType_uri:
 
 two:
   street: MyText
@@ -13,3 +14,4 @@ two:
   state: CA
   zip: 1
   entry: two
+  #AddressType_uri:

@@ -2,9 +2,9 @@ require 'simplecov'
 SimpleCov.start
 SimpleCov.minimum_coverage 90
 
-require "minitest/reporters"
-MiniTest::Reporters.use!
-MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
+# require "minitest/reporters"
+# MiniTest::Reporters.use!
+# MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
 
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)

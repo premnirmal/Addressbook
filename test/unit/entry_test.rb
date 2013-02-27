@@ -6,6 +6,7 @@ class EntryTest < ActiveSupport::TestCase
 	# test all entries are non-empty
 	test "All Entry attributes must not be empty" do
 		entry = Entry.new
+    #assert entry.index
 		assert entry.invalid?
 		assert entry.errors[:first_name].any?
     assert entry.errors[:last_name].any?
