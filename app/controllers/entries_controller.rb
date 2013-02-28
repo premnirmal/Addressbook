@@ -4,21 +4,21 @@ class EntriesController < ApplicationController
   respond_to :html
   def index
     @entries = Entry.all
-    respond_with {(@entries)}
+    respond_with (@entries)
   end
 
   # GET /entries/1
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
-    respond_with {(@entry)}
+    respond_with(@entry)
   end
 
   # GET /entries/new
   # GET /entries/new.json
   def new
     @entry = Entry.new
-    respond_with {(@entry)}
+    respond_with(@entry)
   end
 
   # GET /entries/1/edit

@@ -13,7 +13,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     @addresses = @entry.addresses.find(params[:id])
-    respond_with {(@addresses)}
+    respond_with(@addresses)
   end
 
   # GET /addresses/new

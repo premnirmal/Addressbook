@@ -11,7 +11,7 @@ table
 
   - @entry.addresses.each do |address|
     tr
-      td = AddressType.find(address.AddressType).name
+      td = address.address_type.name
       td = address.street
       td = address.city
       td = address.state

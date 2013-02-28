@@ -8,6 +8,6 @@
 
 
 AddressType.delete_all
-AddressType.create!(:name => 'Home', :id => 1)
-AddressType.create!(:name => 'Work', :id => 2)
-AddressType.create!(:name => 'Other', :id => 3)
+AddressType.create!(:name => 'Home')
+AddressType.create!(:name => 'Work')
+AddressType.create!(:name => 'Other')

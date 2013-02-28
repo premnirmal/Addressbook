@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.collection_select( :AddressType, AddressType.all, :id, :name, :prompt => false, :selected => 1)
+    = f.association :address_type
     = f.input :street
     = f.input :city
     = f.input :state
