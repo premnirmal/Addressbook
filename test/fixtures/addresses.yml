@@ -4,14 +4,14 @@ one:
   street: MyText
   city: MyString
   state: NY
-  zip: 1
+  zip: 12345
   entry: one
-  #AddressType_uri:
+  address_type_id: <%= AddressType.first.id %>
 
 two:
   street: MyText
   city: MyString
   state: CA
-  zip: 1
+  zip: 12345
   entry: two
-  #AddressType_uri:
+  address_type_id: <%= AddressType.first.id %>

@@ -3,7 +3,6 @@ SimpleCov.start
 SimpleCov.minimum_coverage 90
 
 require "minitest/reporters"
-MiniTest::Reporters.use!
 MiniTest::Reporters.use! MiniTest::Reporters::SpecReporter.new
 
 ENV["RAILS_ENV"] = "test"
@@ -16,6 +15,6 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
-
+  load "#{Rails.root}/db/seeds.rb"
   # Add more helper methods to be used by all tests here...
 end

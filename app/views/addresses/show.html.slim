@@ -15,7 +15,7 @@ p
   = @addresses.state
 p
   strong Zip: 
-  = @addresses.zip.to_s.rjust(5, "0")
+  = @addresses.zip
 
 
 = link_to 'Edit', edit_entry_address_path(@entry,@addresses)

@@ -15,7 +15,7 @@ table
       td = address.street
       td = address.city
       td = address.state
-      td = address.zip.to_s.rjust(5, "0")
+      td = address.zip
       td = link_to 'Show', entry_address_path(@entry,address)
       td = link_to 'Edit', edit_entry_address_path(@entry,address)
       td = link_to 'Destroy', entry_address_path(@entry,address), :confirm => 'Are you sure?', :method => :delete

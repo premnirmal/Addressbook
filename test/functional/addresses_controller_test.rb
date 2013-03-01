@@ -11,7 +11,8 @@ class AddressesControllerTest < ActionController::TestCase
       :city => "Los Angeles",
       :street => "Sunset blvd",
       :state => "CA",
-      :zip => 24567
+      :zip => 24567,
+      :address_type_id => 1
     }
   end
 
