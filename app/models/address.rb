@@ -10,6 +10,7 @@ class Address < ActiveRecord::Base
     :message => "PLEASE ENTER A VALID STATE"
   }
   validates_length_of :zip, is: 5
+  validates_length_of :state, is: 2
   
   def state=(val)
   	write_attribute(:state, val.upcase)
