@@ -24,10 +24,11 @@ class EntryTest < ActiveSupport::TestCase
 	test "Email invalid" do
 		entry = Entry.new(last_name: "Last",
                       first_name: "First")
-    	entry.email = "xyz.com"
-    	refute entry.valid?
-    	assert_equal "Must be a valid email address!", entry.errors[:email].join('; ')
-    	entry.email = "xyz@xyz.com"
-    	assert entry.valid?
-  	end
+  	entry.email = "xyz.com"
+   	refute entry.valid?
+   	assert_equal "Must be a valid email address!", entry.errors[:email].join('; ')
+   	entry.email = "xyz@xyz.com"
+   	assert entry.valid?
+  end
+
 end

@@ -51,6 +51,11 @@ class AddressesControllerTest < ActionController::TestCase
     assert_redirected_to entry_address_path(@entry,assigns(:address))
   end
 
+  test "should not update address" do
+    put :update, id: @address, :entry_id => @entry, :address => {:zip => 1}
+    assert_response :success
+  end
+
   test "should destroy address" do
     assert_difference('Address.count', -1) do
       delete :destroy, id: @address, entry_id: @entry

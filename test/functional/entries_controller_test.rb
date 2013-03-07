@@ -45,6 +45,11 @@ class EntriesControllerTest < ActionController::TestCase
     assert_redirected_to entry_path(assigns(:entry))
   end
 
+  test "should not update entry" do
+    put :update, :id => @entry, :entry => {:first_name => "first", :last_name => "last", :email => "invalid_email"}
+    assert_response :success
+  end
+
   test "should destroy entry" do
     assert_difference('Entry.count', -1) do
       delete :destroy, :id => @entry
