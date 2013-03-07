@@ -48,6 +48,7 @@ class EntriesControllerTest < ActionController::TestCase
   test "should not update entry" do
     put :update, :id => @entry, :entry => {:first_name => "first", :last_name => "last", :email => "invalid_email"}
     assert_response :success
+    assert_redirected_to edit_entry_path(@entry)
   end
 
   test "should destroy entry" do

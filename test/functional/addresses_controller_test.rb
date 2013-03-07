@@ -54,6 +54,7 @@ class AddressesControllerTest < ActionController::TestCase
   test "should not update address" do
     put :update, id: @address, :entry_id => @entry, :address => {:zip => 1}
     assert_response :success
+    assert_redirected_to edit_entry_address_path(@entry,assigns(:address))
   end
 
   test "should destroy address" do
