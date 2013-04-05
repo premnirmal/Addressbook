@@ -39,9 +39,12 @@ ActiveRecord::Schema.define(:version => 20130212013952) do
 
   create_table "urls", :force => true do |t|
     t.string   "name"
+    t.integer  "entry_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "entry_id"
+    t.string   "type"
   end
+
+  add_index "urls", ["entry_id"], :name => "index_urls_on_entry_id"
 
 end

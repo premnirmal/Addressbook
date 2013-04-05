@@ -1,5 +1,5 @@
 p#notice = notice
-h1 Show record
+h1 Showing #{@entry.name}
 
 p
   strong Name: 
@@ -7,15 +7,17 @@ p
 
 h2 Emails: 
 - @entry.emails.each do |em|
-    p = em.name
+  p = link_to em.name, em.to_email
 
-
-h2 Addresses:
+h2 Websites: 
+- @entry.weburls.each do |w|
+  p = link_to w.name, w.to_url
+    
+h3 Addresses:
 - @entry.addresses.each do |address|
                 p
                 strong = address.address_type.name
-                ' 
-                strong address: 
+                ':  
                 = address.street
                 ',
                 = address.city
