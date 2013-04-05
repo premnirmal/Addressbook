@@ -7,7 +7,7 @@ class Address < ActiveRecord::Base
   validates :zip, :numericality => { :greater_than => 0 }
   validates :state, :format => {
   	:with => /^(?:A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])*$/,
-    :message => "PLEASE ENTER A VALID STATE"
+    :message => "Enter a valid US state"
   }
   validates_length_of :zip, is: 5
   validates_length_of :state, is: 2

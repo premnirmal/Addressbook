@@ -1,0 +1,3 @@
+class Email < Url
+	
+end

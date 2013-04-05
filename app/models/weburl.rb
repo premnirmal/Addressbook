@@ -1,0 +1,3 @@
+class Weburl < Url
+  
+end

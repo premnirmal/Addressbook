@@ -1,0 +1,9 @@
+= simple_form_for(:weburl) do |w|
+  = f.error_notification
+
+.nested-fields
+  fieldset
+    legend Websites
+    = f.input :name, placeholder: "URL"
+    = f.check_box :_destroy
+    = f.label :_destroy, "Remove"

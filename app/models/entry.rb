@@ -1,11 +1,18 @@
 class Entry < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name
   has_many :addresses, :dependent => :destroy
-  validates :first_name, :last_name, :email, :presence => true
-  validates :email, :uniqueness => true,
-  	:format => {
-  	:with => /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, 
-  	#regular expression to validate email http://rawsyntax.com/blog/rails-3-email-validation/
-  	:message => 'Must be a valid email address!'
-  }
+  has_many :emails, :dependent => :destroy
+  has_many :weburls, :dependent => :destroy
+
+  accepts_nested_attributes_for :addresses, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :emails, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :weburls, :allow_destroy => true, :reject_if => :all_blank
+
+  attr_accessible :first_name, :last_name, :addresses_attributes, :emails_attributes, :weburls_attributes
+
+  validates :first_name, :last_name, :presence => true
+
+  def name
+    first_name + ' ' + last_name
+  end
+
 end

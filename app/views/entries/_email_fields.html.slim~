@@ -1,0 +1,6 @@
+.nested-fields
+  fieldset
+    legend Websites
+    = f.input :name
+    = f.check_box :_destroy
+    = f.label :_destroy, "Remove"

@@ -1,10 +1,17 @@
 = simple_form_for(@entry) do |f|
   = f.error_notification
+  - @entry.addresses.build
+  - @entry.emails.build
+  - @entry.weburls.build
 
   .form-inputs
     = f.input :first_name
     = f.input :last_name
-    = f.input :email
-
+    = f.simple_fields_for :addresses do |address|
+      = render 'address_fields', :f => address
+    = f.simple_fields_for :emails do |email|
+      = render 'email_fields', :f => email
+    = f.simple_fields_for :weburls do |weburl|
+      = render 'weburl_fields', :f => weburl
   .form-actions
     = f.button :submit

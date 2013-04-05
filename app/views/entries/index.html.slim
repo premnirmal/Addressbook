@@ -1,21 +1,14 @@
 h1 CISC-5030-NIRMAL-ADDRESSBOOK
-h2 Listing all entries in addressbook
+h2 Entries
 
 table
   tr
-    th First name
-    th Last name
-    th Email
-    
-  - @entries.each do |entry|
+   th Name
+   - @entries.each do |entry|
     tr
-      td = entry.first_name
-      td = entry.last_name
-      td = entry.email
+      td = entry.name 
       td = link_to 'Show', entry
-      td = link_to 'Edit', edit_entry_path(entry)
       td = link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
 
 br
-
 = link_to 'New Entry', new_entry_path
