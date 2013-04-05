@@ -11,8 +11,16 @@ class Entry < ActiveRecord::Base
 
   validates :first_name, :last_name, :presence => true
 
+  def first_name=(val)
+    write_attribute(:first_name, val.titleize)
+  end
+
+  def last_name=(val)
+    write_attribute(:last_name, val.titleize)
+  end
+
   def name
-    first_name.titleize + ' ' + last_name.titleize
+    first_name + ' ' + last_name
   end
 
 end

@@ -1,12 +1,8 @@
-h1 CISC5030-NIRMAL-ADDRESSBOOK
+h1 NIRMAL-ADDRESSBOOK
 h2 Entries
 
-table
-   - @entries.each do |entry|
-    tr
-      td = entry.name 
-      td = link_to 'Show', entry
-      td = link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+- @entries.each do |entry|
+  ul 
+    li = link_to entry.name, entry
 
-br
 = link_to 'New Entry', new_entry_path

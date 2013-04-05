@@ -13,7 +13,11 @@ class Address < ActiveRecord::Base
   validates_length_of :state, is: 2
   
   def state=(val)
-  	write_attribute(:state, val.upcase)
+    write_attribute(:state, val.upcase)
   end
 
+  def city=(val)
+    write_attribute(:city, val.titleize)
+  end
+  
 end
