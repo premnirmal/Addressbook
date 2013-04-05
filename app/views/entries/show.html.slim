@@ -13,16 +13,17 @@ h2 Websites:
     
 h2 Addresses:
 - @entry.addresses.each do |address|
-  p
-    strong = address.address_type.name
-    ':  
-    = address.street.titleize
-    ',
-    = address.city
-    ',
-    = address.state
-    ' 
-    = address.zip
+  ul
+    li
+      strong = address.address_type.name
+      ':  
+      = address.street.titleize
+      ',
+      = address.city
+      ',
+      = address.state
+      ' 
+      = address.zip
 
 table
   tr
