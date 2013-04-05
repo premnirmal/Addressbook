@@ -3,13 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '~> 3.2'
 gem 'slim'
 gem 'simple_form'
-#gem 'email-validator', '~> 0.2.3'
 gem 'simplecov', :require => false, :group => :test
-#gem 'nester'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+gem 'compass'
+gem 'susy'
+gem 'compass-susy-plugin'
+gem 'compass-normalize'
 
 group :development do
 	gem 'sqlite3'
@@ -30,7 +29,7 @@ gem 'json'
 group :assets do
   gem 'sass-rails',   '~> 3.2'
   gem 'coffee-rails', '~> 3.2'
-
+  gem 'compass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
