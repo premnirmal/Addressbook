@@ -1,6 +1,7 @@
 .nested-fields
   fieldset
     legend Websites
+    = f.association :address_type, label: "Type"
     = f.input :name, placeholder: "URL"
     = f.check_box :_destroy
     = f.label :_destroy, "Remove"

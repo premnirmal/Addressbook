@@ -1,6 +1,7 @@
 .nested-fields
   fieldset
     legend Emails
+    = f.association :address_type, label: "Type"
     = f.input :name, placeholder: "Email"
     = f.check_box :_destroy
     = f.label :_destroy, "Remove"

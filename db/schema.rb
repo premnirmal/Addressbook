@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212013952) do
+ActiveRecord::Schema.define(:version => 20130212013953) do
 
   create_table "address_types", :force => true do |t|
     t.string "name"
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(:version => 20130212013952) do
   create_table "urls", :force => true do |t|
     t.string   "name"
     t.integer  "entry_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "type"
+    t.integer  "address_type_id"
   end
 
   add_index "urls", ["entry_id"], :name => "index_urls_on_entry_id"

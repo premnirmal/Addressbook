@@ -1,6 +1,7 @@
 class Url < ActiveRecord::Base
   belongs_to :entry
-  attr_accessible :name, :type
+  belongs_to :address_type
+  attr_accessible :name, :type, :address_type_id
   def prefix
     self.class.prefix
   end

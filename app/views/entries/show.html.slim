@@ -4,12 +4,14 @@ h1 #{@entry.name}
 h2 Emails: 
 - @entry.emails.each do |em|
   ul
-    li = link_to em.name, em.to_email
+    li = em.address_type.name
+    = link_to em.name, em.to_email
 
 h2 Websites: 
 - @entry.weburls.each do |w|
   ul
-    li = link_to w.name, w.to_url
+    li = w.address_type.name 
+    = link_to w.name, w.to_url
     
 h2 Addresses:
 - @entry.addresses.each do |address|
@@ -27,9 +29,6 @@ h2 Addresses:
 
 table
   tr
-    td
-      = link_to 'Edit', edit_entry_path(@entry)
-    td
-      = button_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete
-    td
-      = link_to 'Back', entries_path
+    td = link_to 'Edit', edit_entry_path(@entry)
+    td = button_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete
+    td = link_to 'Back', entries_path
