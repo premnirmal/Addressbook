@@ -38,6 +38,8 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(params[:feedback])
     if @feedback.save
       redirect_to entries_url, :notice => "Feedback created"
+    else
+      redirect_to entries_url, :notice => "Fields missing"
     end
   end
 
