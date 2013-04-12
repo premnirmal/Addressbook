@@ -14,11 +14,10 @@ $textcolor: black
 
 body
   @include container
-  @include susy-grid-background
-  margin: 1em
   
 nav
   @include span-columns(3,12)
+  margin: 1em 0em 1em 0em
   background-color: $background-color
   height: 30em
   overflow: scroll
@@ -42,6 +41,7 @@ nav
 
 article
   @include span-columns(9 omega,12)
+  margin: 1em 0em 1em 0em
   background-color: $article-bg
   height: 30em
   overflow: scroll
@@ -126,14 +126,13 @@ header,footer
   background-color: $hf-background
 
 header
-  h2  
+  h1,h2
     padding: 0.25em
+    margin: 1em 0em 0em 0em
 
 footer
   text-align: right
-  position: absolute
-  bottom: 0
-  
+  padding: 0.2em
 
 notice
   color: green
