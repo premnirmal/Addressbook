@@ -8,10 +8,10 @@
     = f.input :first_name
     = f.input :last_name
     = f.simple_fields_for :addresses do |address|
-      = render 'address_fields', :f => address
+      = render 'addresses/address_fields', :f => address
     = f.simple_fields_for :emails do |email|
-      = render 'email_fields', :f => email
+      = render 'urls/email_fields', :f => email
     = f.simple_fields_for :weburls do |weburl|
-      = render 'weburl_fields', :f => weburl
+      = render 'urls/weburl_fields', :f => weburl
   .form-actions
     = f.button :submit

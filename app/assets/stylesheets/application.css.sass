@@ -1,5 +1,48 @@
-.notice
+@import susy
+@import normalize
+
+$total-columns: 12
+$column-width: 4em
+$gutter-width: 1em
+$grid-padding: $gutter-width
+$show-grid-backgrounds: true
+
+$background-color: Red
+$hf-background: Lightgrey
+$article-bg: Lightblue
+
+
+body
+  @include container
+  @include susy-grid-background
+
+nav
+  @include span-columns(3,12)
+  h1,h2,h3
+    padding: 0.25em
+  ul,li
+    padding: 0.25em
+  a
+    padding: 0.5em
+  background-color: $background-color
+  height: 30em
+  overflow: scroll
+
+article
+  @include span-columns(9 omega,12)
+  background-color: $article-bg
+
+header,footer
+  clear: both
+  background-color: $hf-background
+  padding: 0.25em
+
+footer
+  position: absolute
+  bottom: 0
+
+#notice
   color: green
 
-.field_with_errors
+#error, .field_with_errors
   color: red

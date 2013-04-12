@@ -2,9 +2,14 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   respond_to :html
-  def index
+  before_filter :get_entries
+
+  def get_entries
     @entries = Entry.all
-    respond_with (@entries)
+  end
+
+  def index
+   respond_with (@entries = Entry.all)
   end
 
   # GET /entries/1
@@ -16,6 +21,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   # GET /entries/new.json
+
   def new
     @entry = Entry.new
     respond_with(@entry)

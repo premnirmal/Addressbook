@@ -6,8 +6,7 @@ gem 'simple_form'
 gem 'simplecov', :require => false, :group => :test
 
 gem 'compass'
-gem 'susy'
-gem 'compass-susy-plugin'
+
 gem 'compass-normalize'
 
 group :development do
@@ -30,6 +29,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2'
   gem 'coffee-rails', '~> 3.2'
   gem 'compass-rails'
+  gem 'susy'
+  gem 'compass-susy-plugin'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
