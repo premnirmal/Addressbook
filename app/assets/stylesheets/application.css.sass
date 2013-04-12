@@ -7,24 +7,28 @@ $gutter-width: 1em
 $grid-padding: $gutter-width
 $show-grid-backgrounds: true
 
-$background-color: Red
-$hf-background: Lightgrey
-$article-bg: Lightblue
-
+$background-color: darkorange
+$hf-background: lightgrey
+$article-bg: lightblue
+$textcolor: black
 
 body
   @include container
   @include susy-grid-background
-
+  margin: 1em
+  
 nav
   @include span-columns(3,12)
   h1,h2,h3
     padding: 0.25em
   ul,li
-    padding: 0.25em
-    line-height: 0.2em
+    line-height: 0.15em
+
   a
     padding: 0.5em
+    text-decoration: none
+    color: $textcolor
+
   background-color: $background-color
   height: 30em
   overflow: scroll
@@ -32,7 +36,10 @@ nav
 article
   @include span-columns(9 omega,12)
   background-color: $article-bg
-
+  height: 30em
+  overflow: scroll
+  p
+    padding-left: 0.5em
 header,footer
   clear: both
   background-color: $hf-background

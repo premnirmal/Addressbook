@@ -6,9 +6,6 @@ head
   = csrf_meta_tags
 
 body
-  h1
-    | NIRMAL-ADDRESSBOOK
-
   nav
     h2 Contacts
     = render :partial => 'entries/index', :locals => {:entries => @entries}

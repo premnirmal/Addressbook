@@ -1,20 +1,18 @@
 h1 What do you think of this app?
 h2 Leave feedback!
 
-notice = show_flash
+p
+  notice = show_flash
 
 == render 'feedbacks/form', :locals => {:feedback => @feedback}
 
-h3 Praise for this addressbook:
+h3 Comments:
 ul
   - @feedbacks.each do |f|
     li
       = f.name 
-      '  (
-      = f.email
-      '  )
-      '  left a comment saying 
+      '  left a comment:
       | "
       = f.comment
-      '  "
+      ' "
   
