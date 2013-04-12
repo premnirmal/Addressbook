@@ -1,4 +1,7 @@
 module ApplicationHelper
-	# include Nester::Helper
-	# nest :address, :under => :entry
+  def show_flash
+    [:notice, :error, :warning].collect do |key|
+      flash[key]
+    end.join
+  end
 end

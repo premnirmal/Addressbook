@@ -2,7 +2,7 @@
   fieldset
     legend Address
     = f.association :address_type
-    = f.input :street
+    = f.input :street, :input_html => {:style=> 'height: 50px'}
     = f.input :city
     = f.input :state
     = f.input :zip

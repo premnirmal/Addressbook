@@ -7,7 +7,6 @@ class EntriesController < ApplicationController
   def get_entries
     @entries = Entry.all
     @feedbacks = Feedback.all
-    @feedback = Feedback.new
   end
 
   def index

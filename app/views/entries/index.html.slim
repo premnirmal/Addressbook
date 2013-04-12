@@ -1,2 +1,20 @@
-h1
-	'WHAT DO YOU THINK OF MY APP
+h1 What do you thik of my app?
+h2 Leave feedback!
+
+notice = show_flash
+
+== render 'feedbacks/form', :locals => {:feedback => @feedback}
+
+h3 Praise for this addressbook:
+ul
+  - @feedbacks.each do |f|
+    li
+      = f.name 
+      '  (
+      = f.email
+      '  )
+      '  left a comment saying 
+      | "
+      = f.comment
+      '  "
+  
