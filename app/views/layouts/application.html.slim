@@ -6,6 +6,9 @@ head
   = csrf_meta_tags
 
 body
+  header
+    h2 Nirmal-Addressbook
+
   nav
     h2 Contacts
     = render :partial => 'entries/index', :locals => {:entries => @entries}

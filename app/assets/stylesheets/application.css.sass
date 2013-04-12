@@ -19,35 +19,121 @@ body
   
 nav
   @include span-columns(3,12)
-  h1,h2,h3
-    padding: 0.25em
-  ul,li
-    line-height: 0.15em
-
-  a
-    padding: 0.5em
-    text-decoration: none
-    color: $textcolor
-
   background-color: $background-color
   height: 30em
   overflow: scroll
+  a
+    text-decoration: none
+    color: $textcolor
+    padding: 0.5em
+    margin-top: 1em
+    
+  h1,h2,h3
+    padding: 0.25em
+    margin-top: 0em
+    margin-bottom: 0.25em
+  ul,li
+    line-height: 1.2em
+  ul
+    margin: 0.25em
+    padding-left: 0.75em
+    a
+      padding: 0.5em
 
 article
   @include span-columns(9 omega,12)
   background-color: $article-bg
   height: 30em
   overflow: scroll
+  h1,h2,h3
+    margin-top: 0em
+    margin-bottom: 0em
+    padding: 0.1em
+  h2,h3
+    padding: 0.25em
+
   p
     padding-left: 0.5em
+  ul,li
+    line-height: 1.2em
+  ul
+    margin: 0.25em
+    padding-left: 2em
+
+.simple_form
+  padding: 0.5em
+  label
+    float: left
+    text-align: left
+    margin-left: 0.25em
+    margin-right: 0.25em
+    margin-top: 0.25em
+    width: 6em
+    font-weight: bold
+      
+  div.input
+    margin-bottom: 0.75em
+    input
+      width: 53.5%
+      textarea
+        width: 50%
+
+  .error
+    clear: left
+    color: black
+    display: block
+    margin-left: 120px
+
+  .hint
+    clear: left
+    margin-left: 120px
+    color: #555
+    display: block
+    font-style: italic
+
+div.boolean, .simple_form input[type='submit']
+  margin-left: 6.5em
+
+div.boolean label, label.collection_radio_buttons
+  float: none
+  margin: 0
+
+label.collection_radio_buttons
+  margin-right: 10px
+  vertical-align: -2px
+  margin-left: 2px
+
+.field_with_errors
+  background-color: #ff3333
+
+input.radio
+  margin-right: 5px
+  vertical-align: -3px
+
+input.check_boxes
+  margin-left: 3px
+  vertical-align: -3px
+
+label.collection_check_boxes
+  float: none
+  margin: 0
+  vertical-align: -2px
+  margin-left: 2px
+
+
 header,footer
   clear: both
   background-color: $hf-background
-  padding: 0.25em
+
+header
+  h2  
+    padding: 0.25em
 
 footer
+  text-align: right
   position: absolute
   bottom: 0
+  
 
 notice
   color: green

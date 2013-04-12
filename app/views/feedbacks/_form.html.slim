@@ -2,8 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :comment, :input_html => {:style=> 'height: 50px'}
+    = f.input :name, :label => 'Name'
+    = f.input :comment, :input_html => {:style => 'height: 50px'}
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, 'Submit'
