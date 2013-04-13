@@ -12,7 +12,6 @@ body
   nav
     h2 Contacts
     = render :partial => 'entries/index', :locals => {:entries => @entries}
-    = link_to 'New Entry', new_entry_path
 
   article
     = yield

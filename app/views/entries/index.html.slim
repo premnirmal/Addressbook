@@ -1,18 +1,15 @@
 h1 What do you think of this app?
-h2 Leave feedback!
-
-
-notice = show_flash
 
 == render 'feedbacks/form', :locals => {:feedback => @feedback}
 
-h3 Comments:
-ul
-  - @feedbacks.each do |f|
-    li
-      = f.name 
-      '  left a comment:
-      | "
-      = f.comment
-      ' "
+fieldset
+  legend Comments
+  ul
+    - @feedbacks.each do |f|
+      li
+        = f.name 
+        '  left a comment:
+        | "
+        = f.comment
+        ' "
   

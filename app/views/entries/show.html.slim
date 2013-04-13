@@ -27,8 +27,9 @@ h2 Addresses:
       ' 
       = address.zip
 
-table
-  tr
-    td = link_to 'Edit', edit_entry_path(@entry)
-    td = button_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete
-    td = link_to 'Back', entries_path
+p
+  = link_to 'Edit', edit_entry_path(@entry)
+  '  | 
+  = link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete
+  '  | 
+  = link_to 'Back', entries_path

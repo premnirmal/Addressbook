@@ -7,36 +7,37 @@ $gutter-width: 1em
 $grid-padding: $gutter-width
 $show-grid-backgrounds: true
 
-$background-color: darkorange
+$nav-color: azure
 $hf-background: lightgrey
-$article-bg: lightblue
-$textcolor: black
+$article-bg: white
+$textcolor: dimgrey
 
 body
   @include container
+  color: dimgrey
   
 nav
   @include span-columns(3,12)
   margin: 1em 0em 1em 0em
-  background-color: $background-color
+  background-color: $nav-color
   height: 30em
   overflow: scroll
+
   a
-    text-decoration: none
     color: $textcolor
     padding: 0.5em
-    margin-top: 1em
-    
+  a:hover,active
+    color: darkgreen
   h1,h2,h3
     padding: 0.25em
-    margin-top: 0em
-    margin-bottom: 0.25em
+    margin: 0em
   ul,li
-    line-height: 1.2em
-  ul
-    margin: 0.25em
-    padding-left: 0.75em
+    padding: 0.1em
+    margin: 0
+    padding-left: 0em
+    line-spacing: 1em
     a
+      text-decoration: none
       padding: 0.5em
 
 article
@@ -45,81 +46,27 @@ article
   background-color: $article-bg
   height: 30em
   overflow: scroll
+  color: $textcolor
   h1,h2,h3
     margin-top: 0em
     margin-bottom: 0em
     padding: 0.1em
   h2,h3
     padding: 0.25em
-
   p
     padding-left: 0.5em
+    text-align: right
   ul,li
     line-height: 1.2em
   ul
     margin: 0.25em
-    padding-left: 2em
-
-.simple_form
-  padding: 0.5em
-  label
-    float: left
-    text-align: left
-    margin-left: 0.25em
-    margin-right: 0.25em
-    margin-top: 0.25em
-    width: 6em
-    font-weight: bold
-      
-  div.input
-    margin-bottom: 0.75em
-    input
-      width: 53.5%
-      textarea
-        width: 50%
-
-  .error
-    clear: left
-    color: black
-    display: block
-    margin-left: 120px
-
-  .hint
-    clear: left
-    margin-left: 120px
-    color: #555
-    display: block
-    font-style: italic
-
-div.boolean, .simple_form input[type='submit']
-  margin-left: 6.5em
-
-div.boolean label, label.collection_radio_buttons
-  float: none
-  margin: 0
-
-label.collection_radio_buttons
-  margin-right: 10px
-  vertical-align: -2px
-  margin-left: 2px
-
-.field_with_errors
-  background-color: #ff3333
-
-input.radio
-  margin-right: 5px
-  vertical-align: -3px
-
-input.check_boxes
-  margin-left: 3px
-  vertical-align: -3px
-
-label.collection_check_boxes
-  float: none
-  margin: 0
-  vertical-align: -2px
-  margin-left: 2px
-
+    padding-left: 1em
+  a
+    text-decoration: underline
+    font-size: 1.5em
+    color: $textcolor
+  a:hover,active
+    color: darkgreen
 
 header,footer
   clear: both
@@ -136,6 +83,100 @@ footer
 
 notice
   color: green
-
-error, .field_with_errors
+alert, error, .field_with_errors
   color: red
+
+// form
+.simple_form
+  input
+    margin: 0.5em
+    padding: 0.2em
+    border: solid 1px #E5E5E5
+    outline: 0
+    width: 20em
+    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #eeeeee), to(white))
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+
+  textarea
+    margin: 0.5em
+    padding: 0.2em
+    border: solid 1px #E5E5E5
+    outline: 0
+    width: 20em
+    background: white url('bg_form.png') left top repeat-x
+    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #eeeeee), to(white))
+    background: -moz-linear-gradient(top, white, #eeeeee 1px, white 25px)
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+
+  input:hover, textarea:hover, input:focus, textarea:focus
+    border-color: #C9C9C9
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px
+
+  label
+    margin: 0.25em
+    padding: 0.2em
+    float: left
+    text-align: left
+    width: 6em
+    color: grey
+
+  input[type='submit']
+    width: auto
+    padding: 9px 15px
+    background: #617798
+    border: 0
+    font-size: 14px
+    color: #FFFFFF
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+
+  select
+    width: 6em
+    padding: 0.2em
+    margin: 0.45em // because padding doesn't work for select
+    margin-bottom: 0.75em
+
+button
+  width: auto
+  padding: 9px 15px
+  background: #617798
+  border: 0
+  font-size: 14px
+  color: #FFFFFF
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+
+table
+  td
+    padding: 0.5em
+
+// legend and fieldset
+fieldset
+  border: 1px solid grey
+  border-radius: 0.5em
+  margin: 0.5em
+legend
+  padding: 0.2em 0.5em
+  border: 1px solid green
+  border-radius: 0.5em
+  color: green
+  font-size: 90%
+  text-align: right
+  display: block
+  color: black
+  padding-bottom: 0.5em
+
+\::-webkit-scrollbar
+  width: 0.5em
+
+\::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)
+  border-radius: 0px
+
+\::-webkit-scrollbar-thumb
+  border-radius: 0px
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)

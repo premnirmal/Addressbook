@@ -1,9 +1,13 @@
-= simple_form_for(@feedback) do |f|
-  = f.error_notification
+fieldset
+  legend Leave feedback
+  p
+    alert = show_flash
+  = simple_form_for(@feedback) do |f|
+    = f.error_notification
 
-  .form-inputs
-    = f.input :name, :label => 'Name'
-    = f.input :comment, :input_html => {:style => 'height: 50px'}
+    .form-inputs
+      = f.input :name, :label => 'Name'
+      = f.input :comment, :input_html => {:style => 'height: 50px'}
 
-  .form-actions
-    = f.button :submit, 'Submit'
+    .form-actions
+      = f.button :submit, 'Submit'

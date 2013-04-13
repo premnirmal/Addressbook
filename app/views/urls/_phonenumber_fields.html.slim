@@ -1,0 +1,7 @@
+.nested-fields
+  fieldset
+    legend Phone
+    = f.association :address_type, label: "Type"
+    = f.input :name, :as => :tel
+    = f.check_box :_destroy
+    = f.label :_destroy, "Remove"

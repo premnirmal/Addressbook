@@ -1,0 +1,2 @@
+class Phonenumber < Url
+end

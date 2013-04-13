@@ -3,15 +3,21 @@
   - @entry.addresses.build
   - @entry.emails.build
   - @entry.weburls.build
+  - @entry.phonenumbers.build
 
   .form-inputs
     = f.input :first_name
     = f.input :last_name
-    = f.simple_fields_for :addresses do |address|
-      = render 'addresses/address_fields', :f => address
+    = f.simple_fields_for :phonenumbers do |phone|
+      = render 'urls/phonenumber_fields', :f => phone
     = f.simple_fields_for :emails do |email|
       = render 'urls/email_fields', :f => email
     = f.simple_fields_for :weburls do |weburl|
       = render 'urls/weburl_fields', :f => weburl
+    = f.simple_fields_for :addresses do |address|
+      = render 'addresses/address_fields', :f => address
+
   .form-actions
-    = f.button :submit
+    p
+      = f.button :submit
+      = link_to 'Back', entries_path
