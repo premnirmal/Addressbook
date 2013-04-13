@@ -1,6 +1,6 @@
 module ApplicationHelper
   def show_flash
-    [:notice, :error, :warning].collect do |key|
+    [:notice, :error, :alert, :warning].collect do |key|
       flash[key]
     end.join
   end

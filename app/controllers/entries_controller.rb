@@ -5,8 +5,8 @@ class EntriesController < ApplicationController
   before_filter :get_entries
 
   def get_entries
-    @entries = Entry.all
-    @feedbacks = Feedback.all
+    @entries = Entry.find(:all,:order => 'last_name')
+    @feedbacks = Feedback.find(:all, :order => 'id DESC')
     @feedback = Feedback.new
   end
 

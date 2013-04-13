@@ -6,12 +6,12 @@ gem 'simple_form'
 gem 'simplecov', :require => false, :group => :test
 
 gem 'compass'
-
 gem 'compass-normalize'
 
 group :development do
-	gem 'sqlite3'
-	gem 'slim-rails'
+  gem 'sqlite3'
+  gem 'slim-rails'
+  gem 'faker'
 end
 group :production do
 	gem 'pg'
