@@ -42,7 +42,7 @@ r = Random
   end
   r.rand(1..3).times do
     w = e.weburls.create!(
-      :name => Faker::Internet.email,
+      :name => Faker::Internet.url,
       :address_type_id => r.rand(1...4))
   end
 end
