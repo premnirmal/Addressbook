@@ -25,6 +25,7 @@ r = Random
   e = Entry.create!(
     :first_name => Faker::Name.first_name,
     :last_name => Faker::Name.last_name,
+    :title => Faker::Name.title
     )
   r.rand(1...3).times do
     a = e.addresses.create!(

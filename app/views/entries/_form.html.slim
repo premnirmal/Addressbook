@@ -8,6 +8,7 @@
   .form-inputs
     = f.input :first_name
     = f.input :last_name
+    = f.input :title, label: 'Job Title'
     = f.simple_fields_for :phonenumbers do |phone|
       = render 'urls/phonenumber_fields', :f => phone
     = f.simple_fields_for :emails do |email|
