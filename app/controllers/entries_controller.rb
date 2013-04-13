@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
   end
 
   def index
-   respond_with (@entries = Entry.all)
+   respond_with (@entries = Entry.find(:all,:order => 'last_name'))
   end
 
   # GET /entries/1
