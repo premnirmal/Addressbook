@@ -63,8 +63,7 @@ article
   p
     padding-left: 0.5em
     text-align: right
-    a
-      font-size: 1.5em
+    font-size: 1.5em
   ul,li
     line-height: 1.2em
   ul
@@ -134,9 +133,8 @@ alert, error, .field_with_errors
 
   input[type='submit']
     width: auto
-    padding: 9px 15px
+    padding: 0.5em
     background: #617798
-    border: 0
     font-size: 14px
     color: #FFFFFF
     -moz-border-radius: 5px
@@ -147,6 +145,33 @@ alert, error, .field_with_errors
     padding: 0.2em
     margin: 0.45em // because padding doesn't work for select
     margin-bottom: 0.75em
+
+form.button_to
+  margin: 0
+  padding: 0
+  display: inline
+  background-color: transparent
+  div
+    display: inline
+    background-color: transparent
+    input
+      display: inline
+      padding: 0em 0em 0.20em 0em
+      margin: 0
+      background-color: transparent
+      border: none
+      font-size: 1.5em
+      text-decoration: underline
+      color: $textcolor
+      a:hover,active
+        color: darkgreen
+
+form.button_to:hover
+  color: darkgreen
+  div
+    color: darkgreen
+    input
+      color: darkgreen
 
 button
   width: auto
@@ -159,8 +184,16 @@ button
   -webkit-border-radius: 5px
 
 table
+  align: right
+  a
+    font-size: 1.5em
+    text-decoration: underline
+    color: $textcolor
+  a:hover,active
+    color: darkgreen
   td
     padding: 0.5em
+    
 
 // legend and fieldset
 fieldset
@@ -176,7 +209,6 @@ legend
   text-align: right
   display: block
   color: black
-  padding-bottom: 0.5em
 
 \::-webkit-scrollbar
   width: 0.5em

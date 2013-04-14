@@ -63,6 +63,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     @entry.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to entries_url }
       format.json { head :no_content }
     end

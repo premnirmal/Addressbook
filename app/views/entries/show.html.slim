@@ -2,39 +2,41 @@ p#notice = notice
 h1 #{@entry.name}
 h3 #{@entry.title}
 
-h2 Emails: 
-- @entry.emails.each do |em|
-  ul
-    li
-      strong = em.address_type.name
-      ': 
-      = link_to em.name, em.to_email
+- unless @entry.emails.empty?
+  h2 Emails: 
+  - @entry.emails.each do |em|
+    ul
+      li
+        strong = em.address_type.name
+        ': 
+        = link_to em.name, em.to_email
 
-h2 Websites: 
-- @entry.weburls.each do |w|
-  ul
-    li 
-      strong = w.address_type.name 
-      ':  
-      = link_to w.name, w.to_url
+- unless @entry.weburls.empty?
+  h2 Websites: 
+  - @entry.weburls.each do |w|
+    ul
+      li 
+        strong = w.address_type.name 
+        ':  
+        = link_to w.name, w.to_url
     
-h2 Addresses:
-- @entry.addresses.each do |address|
-  ul
-    li
-      strong = address.address_type.name
-      ':  
-      = address.street.titleize
-      ',
-      = address.city
-      ',
-      = address.state
-      ' 
-      = address.zip
+- unless @entry.addresses.empty?
+  h2 Addresses:
+  - @entry.addresses.each do |address|
+    ul
+      li
+        strong = address.address_type.name
+        ':  
+        = address.street.titleize
+        ',
+        = address.city
+        ',
+        = address.state
+        ' 
+        = address.zip
 
-p
-  = link_to 'Edit', edit_entry_path(@entry)
-  '  | 
-  = link_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete
-  '  | 
-  = link_to 'Back', entries_path
+table align="right"
+  tr
+    td = link_to 'Edit', edit_entry_path(@entry)
+    td = button_to 'Destroy', @entry, :confirm => 'Are you sure?', :method => :delete, :remote => true
+    td = link_to 'Back', entries_path
