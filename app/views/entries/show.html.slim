@@ -38,5 +38,5 @@ h3 #{@entry.title}
 table align="right"
   tr
     td = link_to 'Edit', edit_entry_path(@entry)
-    td = button_to 'Destroy', @entry, :method => :delete, :remote => true, :confirm => 'Are you sure?'
+    td = button_to 'Destroy', @entry, :method => :delete, :confirm => 'Are you sure?'
     td = link_to 'Back', entries_path
