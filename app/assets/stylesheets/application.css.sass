@@ -15,19 +15,26 @@ $show-grid-backgrounds: true
 
 $nav-color: azure
 $hf-background: lightgrey
-$article-bg: white
+$article-bg: transparent
 $textcolor: dimgrey
+$h-font: impact
+$article-h1-font: "Lucida Sans Unicode"
 
 body
   @include container
   color: dimgrey
-  
+
 nav
   @include span-columns(3,12)
   margin: 1em 0em 1em 0em
+  font-family: regular
   background-color: $nav-color
   height: 31em
   overflow: scroll
+  border: solid 5px $nav-color
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
   a
     color: $textcolor
     padding: 0.5em
@@ -55,7 +62,9 @@ article
   h1,h2,h3
     margin-top: 0em
     margin-bottom: 0em
-    padding: 0.1em
+    padding: 0.25em 0em 0.25em 0em
+    margin: 0.25em 0em 0.25em 0em
+    font-family: $article-h1-font
   h2,h3
     padding: 0.25em
   h3
@@ -78,11 +87,16 @@ article
 header,footer
   clear: both
   background-color: $hf-background
+  border: solid 5px $hf-background
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
 
 header
   h1,h2
     padding: 0.25em
-    margin: 0.5em 0em 0em 0em
+    margin: 0em 0em 0em 0em
+    font-family: $h-font
 
 footer
   text-align: right
