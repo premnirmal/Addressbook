@@ -1,4 +1,5 @@
 class Email < Url
+  validates :name, :email => true
   def self.prefix
     'mailto:'
   end

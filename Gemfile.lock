@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/jonathantribouharet/validates_email_format_of
+  revision: 31f8a8f63d4af0fa8fb3dec1806c3bdcc6f8ad0a
+  specs:
+    validates_email_format_of (1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,3 +193,4 @@ DEPENDENCIES
   sqlite3
   susy
   uglifier (>= 1.0)
+  validates_email_format_of!
