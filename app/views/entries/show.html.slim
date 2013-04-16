@@ -2,6 +2,15 @@ p#notice = notice
 h1 #{@entry.name}
 h3 #{@entry.title}
 
+- unless @entry.phonenumbers.empty?
+  h2 Phonenumbers:
+  - @entry.phonenumbers.each do |ph|
+    ul
+      li
+        strong = ph.address_type.name
+        ': 
+        = ph.name
+
 - unless @entry.emails.empty?
   h2 Emails: 
   - @entry.emails.each do |em|

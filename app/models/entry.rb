@@ -7,7 +7,6 @@ class Entry < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, :allow_destroy => true, :reject_if => :all_blank
   accepts_nested_attributes_for :emails, :allow_destroy => true, :reject_if => :all_blank
   accepts_nested_attributes_for :weburls, :allow_destroy => true, :reject_if => :all_blank
-
   accepts_nested_attributes_for :phonenumbers, :allow_destroy => true, :reject_if => :all_blank
 
   attr_accessible :first_name, :last_name, :title, :addresses_attributes, :emails_attributes, :weburls_attributes, :phonenumbers_attributes
