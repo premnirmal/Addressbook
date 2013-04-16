@@ -11,7 +11,8 @@ end
 
 module Addressbook
   class Application < Rails::Application
-
+    config.assets.initialize_on_precompile = false
+    
     # Added for rspec (PN 04/16/13)
     # Telling rails to generate spec files for us
     # Using this tutorial:
