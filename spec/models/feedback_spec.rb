@@ -1,18 +1,18 @@
-# spec/models/entry.rb
+# spec/models/feedback.rb
 require 'spec_helper'
 
-describe Entry do
+describe Feedback do
   it "has a valid factory" do
-    FactoryGirl.create(:entry).should be_valid
+    FactoryGirl.create(:feedback).should be_valid
   end
-  it "is invalid without a firstname" do
-    FactoryGirl.build(:entry, :first_name => nil).should_not be_valid
+  it "is invalid without a name" do
+    FactoryGirl.build(:feedback, :name => nil).should_not be_valid
   end
-  it "is invalid without a lastname" do
-    FactoryGirl.build(:entry, :last_name => nil).should_not be_valid
+  it "is invalid without a comment" do
+    FactoryGirl.build(:feedback, :comment => nil).should_not be_valid
   end
-  it "returns an entry's full name as a string" do
-    entry = FactoryGirl.create(:entry, :first_name => "John", :last_name => "Doe")
-    entry.name.should == "John Doe"
+  it "has the name titleized" do
+    fb = FactoryGirl.build(:feedback, :name => "beckham")
+    fb.name.should be == "Beckham"
   end
 end

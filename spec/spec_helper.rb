@@ -1,5 +1,6 @@
 require 'simplecov' #PN 04/16/13
 SimpleCov.start 'rails' #PN 04/16/13
+SimpleCov.minimum_coverage 90 #PN 04/16/13
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
