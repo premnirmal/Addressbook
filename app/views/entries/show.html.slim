@@ -1,4 +1,3 @@
-p#notice = notice
 h1 #{@entry.name}
 h3 #{@entry.title}
 
@@ -9,7 +8,7 @@ h3 #{@entry.title}
       li
         strong = ph.address_type.name
         ': 
-        = ph.name
+        = number_to_phone(ph.name, :area_code => true)
 
 - unless @entry.emails.empty?
   h2 Emails: 

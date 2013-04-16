@@ -15,6 +15,7 @@ body
     = render :partial => 'entries/index', :locals => {:entries => @entries}
 
   article
+    #notice = notice
     = yield
 
   footer

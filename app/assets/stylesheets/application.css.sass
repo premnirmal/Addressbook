@@ -54,7 +54,7 @@ nav
 
 article
   @include span-columns(9 omega,12)
-  margin: 0em 0em 1em 0em
+  margin: 1em 0em 0em 0em
   background-color: $article-bg
   height: 31em
   overflow: scroll
@@ -62,9 +62,10 @@ article
   h1,h2,h3
     margin-top: 0em
     margin-bottom: 0em
-    padding: 0em 0em 0.25em 0em
-    margin: 0em 0em 0.25em 0em
+    padding: 0em 0em 0.25em 0.25em
     font-family: $article-h1-font
+  h1
+    margin: 0.5em 0em 0.25em 0em
   h2,h3
     padding: 0.25em
   h3
@@ -101,16 +102,17 @@ footer
   text-align: right
   padding: 0.2em
 
-notice
+#notice
   color: green
-alert, error, .field_with_errors
+  font-size: 1.25em
+#alert, #error, .field_with_errors
   color: red
 
 // form
 .simple_form
   input
     margin: 0.5em
-    padding: 0.2em
+    padding: 0.25em
     border: solid 1px #E5E5E5
     outline: 0
     width: 20em
@@ -121,7 +123,7 @@ alert, error, .field_with_errors
 
   textarea
     margin: 0.5em
-    padding: 0.2em
+    padding: 0.25em
     border: solid 1px #E5E5E5
     outline: 0
     width: 20em
