@@ -1,7 +1,0 @@
-# spec/factories/entries.rb
-FactoryGirl.define do
-  factory :entry do |f|
-    f.firstname "John"
-    f.lastname "Doe"
-  end
-end
