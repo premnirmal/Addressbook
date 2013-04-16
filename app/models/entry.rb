@@ -14,13 +14,19 @@ class Entry < ActiveRecord::Base
   validates :first_name, :last_name, :presence => true
 
   def title=(val)
-    write_attribute(:title, val.titleize)
+    if val != nil
+      write_attribute(:title, val.titleize)
+    end
   end
   def first_name=(val)
-    write_attribute(:first_name, val.titleize)
+    if val != nil
+      write_attribute(:first_name, val.titleize)
+    end
   end
   def last_name=(val)
-    write_attribute(:last_name, val.titleize)
+    if val != nil
+      write_attribute(:last_name, val.titleize)
+    end
   end
   def name
     first_name + ' ' + last_name

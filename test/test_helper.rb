@@ -1,5 +1,5 @@
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'rails'
 SimpleCov.minimum_coverage 90
 
 require "minitest/reporters"

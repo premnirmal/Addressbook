@@ -14,11 +14,13 @@ group :development do
   gem 'slim-rails'
 end
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
-group :test do
-	gem 'minitest-reporters'
+group :development, :test do
+  gem 'minitest-reporters'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 gem 'json'
