@@ -14,23 +14,23 @@ class FeedbacksController < ApplicationController
 
   # GET /feedbacks/1
   # GET /feedbacks/1.json
-  def show
-    @feedback = Feedback.find(params[:id])
-    respond_with(@feedback)
-  end
+  # def show
+  #   @feedback = Feedback.find(params[:id])
+  #   respond_with(@feedback)
+  # end
 
-  # GET /feedbacks/new
-  # GET /feedbacks/new.json
+  # # GET /feedbacks/new
+  # # GET /feedbacks/new.json
 
-  def new
-    @feedback = Feedback.new
-    respond_with(@feedback)
-  end
+  # def new
+  #   @feedback = Feedback.new
+  #   #respond_with(@feedback)
+  # end
 
-  # GET /feedbacks/1/edit
-  def edit
-    @feedback = Feedback.find(params[:id])
-  end
+  # # GET /feedbacks/1/edit
+  # def edit
+  #   @feedback = Feedback.find(params[:id])
+  # end
 
   # POST /feedbacks
   # POST /feedbacks.json

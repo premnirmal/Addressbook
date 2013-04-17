@@ -8,4 +8,9 @@ FactoryGirl.define do
     f.last_name { Faker::Name.last_name }
     f.title {Faker::Name.title}
   end
+
+  factory :invalid_entry, parent: :entry do |f|
+    f.first_name ""
+    f.last_name ""
+  end
 end
