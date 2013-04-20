@@ -1,5 +1,9 @@
-= link_to 'New Entry', new_entry_path
-p
-- @entries.each do |entry|
-  ul
-    li = link_to entry.name, entry
+ul#tab
+  - ('A'..'Z').each do |i|
+    li = link_to i, entries_path(initial: i)
+ul#entries
+  = link_to 'New Entry', new_entry_path
+  p
+    - @entries.each do |entry|
+      ul
+        li = link_to entry.name, entry

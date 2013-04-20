@@ -7,7 +7,10 @@ $base-font-size: 15px
 $base-line-height: 18px
 @include establish-baseline
 
-$total-columns: 12
+$total-columns: 24
+$article-columns: 18
+$nav-columns: $total-columns - $article-columns
+
 $column-width: 4em
 $gutter-width: 1em
 $grid-padding: $gutter-width
@@ -20,12 +23,23 @@ $textcolor: dimgrey
 $h-font: impact
 $article-h1-font: "Lucida Sans Unicode"
 
-body
+#content
   @include container
-  color: dimgrey
-    
+
+body
+  color: dimgrey  
+
+ul#tab
+  @include span-columns(1,$nav-columns)
+  box-sizing: border-box
+  margin: 0em !important
+  
+ul#entries
+  @include span-columns(5 omega,$nav-columns)
+  box-sizing: border-box
+  
 nav
-  @include span-columns(3,12)
+  @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
   font-family: regular
   background-color: $nav-color
@@ -51,9 +65,10 @@ nav
     a
       text-decoration: none
       padding: 0.5em
+          
 
 article
-  @include span-columns(9 omega,12)
+  @include span-columns(17 omega, $total-columns)
   margin: 1em 0em 0em 0em
   background-color: $article-bg
   height: 35em
@@ -91,7 +106,7 @@ header,footer
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
-
+    
 header
   h1,h2
     padding: 0.25em

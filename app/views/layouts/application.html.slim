@@ -6,18 +6,18 @@ head
   = stylesheet_link_tag "application", media: "all"
   = csrf_meta_tags
 
-body
+body id="content"
   header
     h1 Nirmal-Addressbook
-
+    
   nav
     h2 Contacts
     = render :partial => 'entries/index', :locals => {:entries => @entries}
-
+  
   article
     #notice = notice
     = yield
-
+  
   footer
     | &copy Nirmal
-    
+          
