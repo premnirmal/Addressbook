@@ -128,6 +128,8 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    rufus-scheduler (2.0.18)
+      tzinfo (>= 0.3.23)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -185,6 +187,7 @@ DEPENDENCIES
   pg
   rails (~> 3.2)
   rspec-rails
+  rufus-scheduler
   sass-rails (~> 3.2)
   simple_form
   simplecov

@@ -4,7 +4,7 @@ gem 'rails', '~> 3.2'
 gem 'slim'
 gem 'simple_form'
 gem 'simplecov', :require => false, :group => :test
-
+gem 'rufus-scheduler' # to keep app loaded on heroku, prevent it from shutting down
 gem 'compass'
 gem 'compass-normalize'
 gem 'faker'

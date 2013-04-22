@@ -33,11 +33,17 @@ ul#tab
   @include span-columns(1,$nav-columns)
   box-sizing: border-box
   margin: 0em !important
-  
+  a
+    color: black !important
+//    border-right: solid 1px
+//  border-bottom: solid 1px
+    margin: 0.5em !important
+    line-height: 1.5em
+    
 ul#entries
   @include span-columns(5 omega,$nav-columns)
   box-sizing: border-box
-  
+
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
@@ -58,14 +64,13 @@ nav
     padding: 0.25em
     margin: 0em
   ul,li
-    padding: 0.1em
+    padding: 0em
     margin: 0
     padding-left: 0em
     line-spacing: 1em
     a
       text-decoration: none
-      padding: 0.5em
-          
+      
 
 article
   @include span-columns(17 omega, $total-columns)
