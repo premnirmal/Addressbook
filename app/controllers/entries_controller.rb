@@ -9,11 +9,18 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     params[:initial] = @entry.last_name[0]
   end
-
+  
   def get_entries
-    @entries = 
-      Entry.where('substr(last_name,1,1)= ?',
-                  params[:initial] || 'A').order('last_name, first_name')
+    criteria =
+      if params[:search]
+        param = "#{params[:search].downcase}%" # this is a wildcard
+        ["lower(last_name) like ? or lower(first_name) like ?",
+         param, param]
+      else
+        ['substr(last_name,1,1)= ?',
+         params[:initial] || 'A'] 
+      end
+    @entries = Entry.where(criteria).order('last_name, first_name')
     @feedbacks = Feedback.find(:all, :order => 'id DESC')
     @feedback = Feedback.new
   end

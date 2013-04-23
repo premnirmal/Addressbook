@@ -28,22 +28,7 @@ $article-h1-font: "Lucida Sans Unicode"
 
 body
   color: dimgrey  
-
-ul#tab
-  @include span-columns(1,$nav-columns)
-  box-sizing: border-box
-  margin: 0em !important
-  a
-    color: black !important
-//    border-right: solid 1px
-//  border-bottom: solid 1px
-    margin: 0.5em !important
-    line-height: 1.5em
     
-ul#entries
-  @include span-columns(5 omega,$nav-columns)
-  box-sizing: border-box
-
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
@@ -55,6 +40,7 @@ nav
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
+
   a
     color: $textcolor
     padding: 0.5em
@@ -68,9 +54,22 @@ nav
     margin: 0
     padding-left: 0em
     line-spacing: 1em
+    list-style-type: none
     a
       text-decoration: none
-      
+
+  ul#tab
+    @include span-columns(1,$nav-columns)
+    box-sizing: border-box
+    list-style-type: none
+    width: auto
+    margin: 0em !important
+    a
+      margin: 0.5em !important
+      line-height: 1.5em    
+  ul#entries
+    @include span-columns(5 omega,$nav-columns)
+    box-sizing: border-box
 
 article
   @include span-columns(17 omega, $total-columns)
