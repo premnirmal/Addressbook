@@ -1,87 +1,76 @@
 class EntriesController < ApplicationController
-  # GET /entries
-  # GET /entries.json
   respond_to :html
+  before_filter :find_entry,     only: [:show, :edit, :update]
+  before_filter :build_children, only: [:new, :edit]
   before_filter :get_entries
-  before_filter :find_entry, :only => [:show, :edit, :destroy, :update]
-  
-  def find_entry
-    @entry = Entry.find(params[:id])
-    params[:initial] = @entry.last_name[0]
+
+  def index
+    respond_with(@entries)
   end
-  
+
+  def show
+    respond_with(@entry)
+  end
+
+  def new
+    respond_with(@entry)
+  end
+
+  def edit
+    respond_with(@entry)
+  end
+
+  def create
+    @entry = Entry.new(params[:entry])
+    if(@entry.save)
+      flash_notice('created')
+    else
+      build_children
+    end
+    respond_with(@entry)
+  end
+
+  def update
+    flash_notice('updated') if @entry.update_attributes(params[:entry])
+    respond_with(@entry)
+  end
+
+  def destroy
+    Entry.find(params[:id]).destroy
+    flash_notice('deleted')
+    redirect_to entries_url
+  end
+
+  private
   def get_entries
     criteria =
       if params[:search]
-        param = "#{params[:search].downcase}%" # this is a wildcard
+        param = "#{params[:search].downcase}%"
         ["lower(last_name) like ? or lower(first_name) like ?",
          param, param]
       else
-        ['substr(last_name,1,1)= ?',
-         params[:initial] || 'A'] 
+        ['substr(last_name,1,1) = ?', params[:initial]||'A']
       end
     @entries = Entry.where(criteria).order('last_name, first_name')
     @feedbacks = Feedback.find(:all, :order => 'id DESC')
     @feedback = Feedback.new
   end
-  
-  def index
-    respond_with (@entries = Entry.where('substr(last_name,1,1)= ?',
-                                         params[:initial] || 'A').order('last_name, first_name'))
-  end
 
-  # GET /entries/1
-  # GET /entries/1.json
-  def show
+  def find_entry
     @entry = Entry.find(params[:id])
-    respond_with(@entry)
+    params[:initial] = @entry.last_name[0]
   end
 
-  # GET /entries/new
-  # GET /entries/new.json
-
-  def new
-    @entry = Entry.new
-    respond_with(@entry)
+  def flash_notice(msg)
+    flash[:notice] = "#{@entry.name} #{msg}"
   end
 
-  # GET /entries/1/edit
-  def edit
-    @entry = Entry.find(params[:id])
-  end
-  
-  # POST /entries
-  # POST /entries.json
-  def create
-    @entry = Entry.new(params[:entry])
-    flash[:notice] = "Entry created" if @entry.save
-    respond_with(@entry)
-  end
-
-  # PUT /entries/1
-  # PUT /entries/1.json
-  def update
-    @entry = Entry.find(params[:id])
-    respond_to do |format|
-      if @entry.update_attributes(params[:entry])
-        format.html { redirect_to @entry, :notice => 'Entry was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @entry.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-  
-  # DELETE /entries/1
-  # DELETE /entries/1.json
-  def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
-    respond_to do |format|
-      format.js
-      format.html { redirect_to entries_url }
-      format.json { head :no_content }
+  def build_children
+    @entry ||= Entry.new
+    @entry.class.reflect_on_all_associations.find_all do |a|
+        a.collection?
+    end.collect(&:name).each do |attr|
+      @entry.send(attr).build
     end
   end
 end

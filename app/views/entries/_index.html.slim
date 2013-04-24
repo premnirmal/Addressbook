@@ -1,4 +1,4 @@
-= form_tag entries_path, method: 'get' do |f|
+= form_tag entries_path, method: 'get' do
   = text_field_tag :search, params[:search], type: :search
 
 ul#tab
@@ -10,4 +10,4 @@ ul#entries
   = link_to 'New Entry', new_entry_path
   p
     - @entries.each do |entry|
-      li = link_to entry.name, entry_path(entry, search: params[:search])
+      = render 'index_entry', entry: entry

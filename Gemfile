@@ -36,7 +36,7 @@ group :assets do
   gem 'compass-susy-plugin'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'sassy-buttons'
   gem 'uglifier', '>= 1.0'
   gem 'slim-rails'
 end

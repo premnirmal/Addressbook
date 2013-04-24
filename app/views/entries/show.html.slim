@@ -42,8 +42,8 @@ h3 #{@entry.title}
         = address.state
         ' 
         = address.zip
-
-table align="right"
+p
+table
   tr
     td = link_to 'Edit', edit_entry_path(@entry)
     td = button_to 'Destroy', @entry, :method => :delete, :confirm => 'Are you sure?'

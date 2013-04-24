@@ -2,6 +2,7 @@
 @import normalize
 @import "compass/typography/vertical_rhythm"
 @import "compass/css3"
+@import "sassy-buttons"
 
 $base-font-size: 15px
 $base-line-height: 18px
@@ -22,12 +23,19 @@ $article-bg: transparent
 $textcolor: dimgrey
 $h-font: impact
 $article-h1-font: "Lucida Sans Unicode"
+$highlight: orange
 
 #content
   @include container
 
 body
   color: dimgrey  
+
+.selected
+  color: $highlight
+  a
+    color: $highlight !important
+    font-weight: bold
     
 nav
   @include span-columns($nav-columns, $total-columns)
@@ -40,12 +48,13 @@ nav
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
-
+  form
+    @include prefix(1, $nav-columns)
   a
     color: $textcolor
     padding: 0.5em
   a:hover,active
-    color: darkgreen
+    color: darkorange
   h1,h2,h3
     padding: 0.25em
     margin: 0em
@@ -53,7 +62,6 @@ nav
     padding: 0em
     margin: 0
     padding-left: 0em
-    line-spacing: 1em
     list-style-type: none
     a
       text-decoration: none
@@ -62,11 +70,6 @@ nav
     @include span-columns(1,$nav-columns)
     box-sizing: border-box
     list-style-type: none
-    width: auto
-    margin: 0em !important
-    a
-      margin: 0.5em !important
-      line-height: 1.5em    
   ul#entries
     @include span-columns(5 omega,$nav-columns)
     box-sizing: border-box
@@ -91,8 +94,9 @@ article
     font-weight: normal
   p
     padding-left: 0em
+    padding-right: 1em
     text-align: right
-    font-size: 1.5em
+    font-size: 1em
   ul
     line-height: 1.2em
     margin: 0.25em
@@ -166,14 +170,8 @@ footer
     color: grey
 
   input[type='submit']
+    @include sassy-button-gradient("matte", #617798)
     width: auto
-    padding: 0.5em
-    background: #617798
-    font-size: 14px
-    color: #FFFFFF
-    -moz-border-radius: 5px
-    -webkit-border-radius: 5px
-
   select
     width: 6em
     padding: 0.2em
@@ -194,7 +192,7 @@ form.button_to
       margin: 0
       background-color: transparent
       border: none
-      font-size: 1.5em
+      font-size: 1.25em
       text-decoration: underline
       color: $textcolor
       a:hover,active
@@ -207,27 +205,21 @@ form.button_to:hover
     input
       color: darkgreen
 
+
 button
+  @include sassy-button-gradient("matte", #617798)
   width: auto
-  padding: 9px 15px
-  background: darkcyan
-  border: 0
-  font-size: 14px
-  color: #FFFFFF
-  -moz-border-radius: 5px
-  -webkit-border-radius: 5px
 
 table
-  align: right
+  align: center
   a
-    font-size: 1.5em
+    font-size: 1.25em
     text-decoration: underline
     color: $textcolor
   a:hover,active
     color: darkgreen
   td
-    padding: 0.5em
-    
+    padding: 0.25em
 
 // legend and fieldset
 fieldset
@@ -243,14 +235,3 @@ legend
   text-align: right
   display: block
   color: black
-
-\::-webkit-scrollbar
-  width: 0.5em
-
-\::-webkit-scrollbar-track
-  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)
-  border-radius: 0px
-
-\::-webkit-scrollbar-thumb
-  border-radius: 0px
-  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)

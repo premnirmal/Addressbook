@@ -1,9 +1,5 @@
 = simple_form_for(@entry) do |f|
   = f.error_notification
-  - @entry.addresses.build
-  - @entry.emails.build
-  - @entry.weburls.build
-  - @entry.phonenumbers.build
 
   .form-inputs
     = f.input :first_name, :placeholder => 'First Name'
