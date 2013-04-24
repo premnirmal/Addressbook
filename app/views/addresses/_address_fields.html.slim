@@ -1,10 +1,18 @@
 .nested-fields
-  fieldset
-    legend Address
-    = f.association :address_type, :label => 'Type'
-    = f.input :street, :input_html => {:style=> 'height: 50px'}, :placeholder => 'Street'
-    = f.input :city, :placeholder => 'City'
-    = f.input :state, :placeholder => 'State'
-    = f.input :zip, :placeholder => 'Zip', :as => :string
-    = f.check_box :_destroy
-    = f.label :_destroy, "Remove"
+  table
+    tr
+      td
+        = f.association :address_type, label: false
+      td
+        = f.check_box :_destroy
+        = f.label :_destroy, "Remove"
+    tr
+      td
+        = f.input :street, :input_html => {:style=> 'height: 50px'}, :placeholder => 'Street', label: false
+      td
+        = f.input :city, :placeholder => 'City', label: false
+    tr
+      td
+        = f.input :state, :placeholder => 'State', label: false
+      td
+        = f.input :zip, :placeholder => 'Zip', :as => :string, label: false

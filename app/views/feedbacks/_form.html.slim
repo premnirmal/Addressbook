@@ -1,13 +1,11 @@
-fieldset
-  legend Leave feedback
-  p
-    notice = show_flash
+p
+  notice = show_flash
   = simple_form_for(@feedback) do |f|
     = f.error_notification
 
     .form-inputs
-      = f.input :name, :label => 'Name'
-      = f.input :comment, :input_html => {:style => 'height: 50px'}
+      = f.input :name, :placeholder => 'Name', :label => false
+      = f.input :comment, :input_html => {:style => 'height: 50px'}, :label => false, :placeholder => 'Comment'
 
     .form-actions
       = f.button :submit, 'Submit'

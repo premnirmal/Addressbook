@@ -16,7 +16,7 @@ $nav-color: lighten(beige,5%)
 $hf-background: lighten(beige,5%)
 $article-bg: transparent
 $textcolor: dimgrey
-$h-font: courier
+$h-font: futura
 $article-font: hevletica
 $highlight: orange
 
@@ -52,7 +52,7 @@ body
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
-  font-family: courier new
+  font-family: $article-font
   background-color: $nav-color
   height: 33em
   overflow: scroll
@@ -72,9 +72,13 @@ nav
   h1,h2,h3
     padding: 0.25em
     margin: 0em
+  h2
+    border-bottom: 1px solid darkgrey
   h2,h3
     color: $textcolor
     a
+      padding: 0.25em
+      margin: 0em
       color: $textcolor
       text-decoration: underline !important
   ul,li
@@ -149,44 +153,37 @@ article
   input
     margin: 0.5em
     padding: 0.25em
-    border: solid 1px #E5E5E5
+    border: none
+    border-bottom: solid 1px #E5E5E5
     outline: 0
-    width: 20em
-    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #eeeeee), to(white))
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    width: 10em
 
   textarea
     margin: 0.5em
     padding: 0.25em
-    border: solid 1px #E5E5E5
+    border: none
+    border-bottom: solid 1px #E5E5E5
     outline: 0
-    width: 20em
-    background: white url('bg_form.png') left top repeat-x
-    background: -webkit-gradient(linear, left top, left 25, from(white), color-stop(4%, #eeeeee), to(white))
-    background: -moz-linear-gradient(top, white, #eeeeee 1px, white 25px)
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px
+    width: 10em
 
   input:hover, textarea:hover, input:focus, textarea:focus
+    border: 1px
     border-color: #C9C9C9
-    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px
+    -webkit-box-shadow: wheat 0px 0px 5px
 
   label
     margin: 0.25em
     padding: 0.2em
     float: left
     text-align: left
-    width: 6em
+    width: 3em
     color: grey
 
   input[type='submit']
     @include sassy-button-gradient("matte", #617798)
     width: auto
   select
-    width: 6em
+    width: 4em
     padding: 0.2em
     margin: 0.45em // because padding doesn't work for select
     margin-bottom: 0.75em

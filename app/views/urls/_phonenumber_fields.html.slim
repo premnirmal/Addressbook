@@ -1,7 +1,10 @@
 .nested-fields
-  fieldset
-    legend Phone
-    = f.association :address_type, label: "Type"
-    = f.input :name, :as => :tel, input_html: { maxlength: 10 }, :placeholder => 'Phone'
-    = f.check_box :_destroy
-    = f.label :_destroy, "Remove"
+  table
+    tr
+      td
+        = f.input :name, :as => :tel, input_html: { maxlength: 10 }, :placeholder => 'Phone', label: false
+      td
+        = f.association :address_type, label: false
+      td
+        = f.check_box :_destroy
+        = f.label :_destroy, "Remove"
