@@ -12,21 +12,33 @@ $total-columns: 24
 $article-columns: 18
 $nav-columns: $total-columns - $article-columns
 
-$column-width: 4em
-$gutter-width: 1em
-$grid-padding: $gutter-width
-$show-grid-backgrounds: true
-
-$nav-color: azure
-$hf-background: lightgrey
+$nav-color: lighten(beige,5%)
+$hf-background: lighten(beige,5%)
 $article-bg: transparent
 $textcolor: dimgrey
-$h-font: impact
-$article-h1-font: "Lucida Sans Unicode"
+$h-font: courier
+$article-font: hevletica
 $highlight: orange
 
 #content
   @include container
+
+header,footer
+  clear: both
+  background-color: $hf-background
+  border: solid 5px $hf-background
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
+header
+  h1,h2
+    padding: 0.25em
+    margin: 0em 0em 0em 0em
+    font-family: $h-font
+footer
+  text-align: right
+  padding: 0.2em
+  font-family: $h-font
 
 body
   color: dimgrey  
@@ -40,24 +52,31 @@ body
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
-  font-family: regular
+  font-family: courier new
   background-color: $nav-color
-  height: 35em
+  height: 33em
   overflow: scroll
   border: solid 5px $nav-color
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
-  form
-    @include prefix(1, $nav-columns)
+  input[type="search"]
+    -webkit-appearance: searchfield
+    width: 10em
   a
-    color: $textcolor
+    color: darken($textcolor,10%)
     padding: 0.5em
   a:hover,active
-    color: darkorange
+    color: lighten(red,10%)
+    font-weight: bold
   h1,h2,h3
     padding: 0.25em
     margin: 0em
+  h2,h3
+    color: $textcolor
+    a
+      color: $textcolor
+      text-decoration: underline !important
   ul,li
     padding: 0em
     margin: 0
@@ -65,11 +84,21 @@ nav
     list-style-type: none
     a
       text-decoration: none
-
   ul#tab
     @include span-columns(1,$nav-columns)
-    box-sizing: border-box
     list-style-type: none
+    li
+      text-align: center
+      border-left: 1px solid darkgrey
+      border-bottom: 1px solid darkgrey
+      border-bottom-left-radius: 7px
+    a
+      font-size: 0.75em
+      line-height: 0.5em
+      color: lighten($textcolor, 10%)
+    a:hover,active
+      color: lighten(red,10%)
+      font-weight: bold
   ul#entries
     @include span-columns(5 omega,$nav-columns)
     box-sizing: border-box
@@ -84,14 +113,15 @@ article
   h1,h2,h3
     margin-top: 0em
     margin-bottom: 0em
-    padding: 0em 0em 0.25em 0.25em
-    font-family: $article-h1-font
+    padding: 0em 0em 0.25em 0em
+    font-family: $article-font
   h1
-    margin: 0.5em 0em 0.25em 0em
-  h2,h3
+    margin: 1em 0.5em 0.25em 0em
+  h2
     padding: 0.25em
   h3
     font-weight: normal
+    border-bottom: solid 1px lightgrey
   p
     padding-left: 0em
     padding-right: 1em
@@ -100,30 +130,13 @@ article
   ul
     line-height: 1.2em
     margin: 0.25em
-    padding-left: 2.5em
+    padding-left: 1.5em
+    list-style-type: none
   a
     text-decoration: underline
     color: $textcolor
   a:hover,active
     color: darkgreen
-
-header,footer
-  clear: both
-  background-color: $hf-background
-  border: solid 5px $hf-background
-  -webkit-border-radius: 10px
-  -moz-border-radius: 10px
-  border-radius: 10px
-    
-header
-  h1,h2
-    padding: 0.25em
-    margin: 0em 0em 0em 0em
-    font-family: $h-font
-
-footer
-  text-align: right
-  padding: 0.2em
 
 #notice
   color: green
@@ -223,14 +236,13 @@ table
 
 // legend and fieldset
 fieldset
-  border: 1px solid grey
+  border: 1px solid lightgrey
   border-radius: 0.5em
   margin: 0.5em
 legend
   padding: 0.2em 0.5em
-  border: 1px solid green
   border-radius: 0.5em
-  color: green
+  font-family: $article-font
   font-size: 90%
   text-align: right
   display: block

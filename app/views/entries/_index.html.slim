@@ -1,13 +1,13 @@
-= form_tag entries_path, method: 'get' do
-  = text_field_tag :search, params[:search], type: :search
-
 ul#tab
   - ('A'..'Z').each do |i|
     - iskey = (params[:initial] == i)
     li class=(iskey ? 'selected' : '')
       = link_to i, entries_path(initial: i)
 ul#entries
-  = link_to 'New Entry', new_entry_path
+  h2 Contacts
+  = form_tag entries_path, method: 'get' do
+    = text_field_tag :search, params[:search], type: :search
+  h3 = link_to 'New Entry', new_entry_path
   p
     - @entries.each do |entry|
       = render 'index_entry', entry: entry
