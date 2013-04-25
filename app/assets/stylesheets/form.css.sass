@@ -1,0 +1,123 @@
+@import base
+
+// form
+.simple_form
+  .alert-error, .alert
+    color: red
+  #alert, #error, .field_with_errors
+    color: red
+    input 
+      border-bottom: solid 1px red
+
+  .entry_addresses_city, .entry_addresses_state, .entry_addresses_state
+    display: inline-block
+
+  .required
+    input
+      border-bottom: solid 1px darkorange
+
+  input
+    margin: 0.5em
+    padding: 0.25em
+    border: none
+    border-bottom: solid 1px #E5E5E5
+    outline: 0
+    width: 10em
+
+  textarea
+    margin: 0.5em
+    padding: 0.25em
+    border: none
+    border-bottom: solid 1px #E5E5E5
+    outline: 0
+    width: 10em
+
+  input:hover, textarea:hover, input:focus, textarea:focus
+    border: 1px
+    border-color: #C9C9C9
+    -webkit-box-shadow: wheat 0px 0px 5px
+
+  label
+    margin: 0.25em
+    padding: 0.2em
+    float: left
+    text-align: left
+    width: 3em
+    color: grey
+
+  input[type='submit']
+    @include sassy-button-gradient("matte", #617798)
+    width: auto
+  select
+    width: 4em
+    padding: 0.2em
+    margin: 0.45em // because padding doesn't work for select
+    margin-bottom: 0.75em
+
+form.button_to
+  margin: 0
+  padding: 0
+  display: inline
+  background-color: transparent
+  div
+    display: inline
+    background-color: transparent
+    input
+      display: inline
+      padding: 0em 0em 0.20em 0em
+      margin: 0
+      background-color: transparent
+      border: none
+      font-size: 1.25em
+      text-decoration: underline
+      color: $textcolor
+      a:hover,active
+        color: darkgreen
+
+form.button_to:hover
+  color: darkgreen
+  div
+    color: darkgreen
+    input
+      color: darkgreen
+
+
+button
+  @include sassy-button-gradient("matte", #617798)
+  width: auto
+
+table
+  align: center
+  a
+    font-size: 1.25em
+    text-decoration: underline
+    color: $textcolor
+  a:hover,active
+    color: darkgreen
+  td
+    padding: 0.25em
+
+// legend and fieldset
+fieldset
+  border: 1px solid lightgrey
+  border-radius: 0.5em
+  margin: 0.5em
+legend
+  padding: 0.2em 0.5em
+  border-radius: 0.5em
+  font-family: $article-font
+  font-size: 90%
+  text-align: right
+  display: block
+  color: black
+
+\::-webkit-scrollbar
+  width: 0.5em
+
+\::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)
+  border-radius: 0px
+
+\::-webkit-scrollbar-thumb
+  border-radius: 0px
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0)
