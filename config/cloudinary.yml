@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dkfquzn5i
+  api_key: '315736297733175'
+  api_secret: Qj6Jkc8OqVn3NxJxVi9v6kiBHIg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dkfquzn5i
+  api_key: '315736297733175'
+  api_secret: Qj6Jkc8OqVn3NxJxVi9v6kiBHIg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dkfquzn5i
+  api_key: '315736297733175'
+  api_secret: Qj6Jkc8OqVn3NxJxVi9v6kiBHIg
+  enhance_image_tag: true
+  static_image_support: false

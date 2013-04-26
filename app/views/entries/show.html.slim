@@ -1,50 +1,54 @@
-h1 #{@entry.name}
-h3 #{@entry.title}
 
-- unless @entry.phonenumbers.empty?
-  h2 Phonenumbers:
-  - @entry.phonenumbers.each do |ph|
-    ul
-      li
-        strong = ph.address_type.name
-        ': 
-        = number_to_phone(ph.name, :area_code => true)
+#avatar
+  h1 #{@entry.name}
+  h3 #{@entry.title}
+  = avatar(@entry, 310)
 
-- unless @entry.emails.empty?
-  h2 Emails: 
-  - @entry.emails.each do |em|
-    ul
-      li
-        strong = em.address_type.name
-        ': 
-        = link_to em.name, em.to_email
+#details
+  - unless @entry.phonenumbers.empty?
+    h2 Phonenumbers:
+    - @entry.phonenumbers.each do |ph|
+      ul
+        li
+          strong = ph.address_type.name
+          ': 
+          = number_to_phone(ph.name, :area_code => true)
 
-- unless @entry.weburls.empty?
-  h2 Websites: 
-  - @entry.weburls.each do |w|
-    ul
-      li 
-        strong = w.address_type.name 
-        ':  
-        = link_to w.name, w.to_url
+    - unless @entry.emails.empty?
+      h2 Emails: 
+      - @entry.emails.each do |em|
+        ul
+          li
+            strong = em.address_type.name
+            ': 
+            = link_to em.name, em.to_email
+
+    - unless @entry.weburls.empty?
+      h2 Websites: 
+      - @entry.weburls.each do |w|
+        ul
+          li 
+            strong = w.address_type.name 
+            ':  
+            = link_to w.name, w.to_url
     
-- unless @entry.addresses.empty?
-  h2 Addresses:
-  - @entry.addresses.each do |address|
-    ul
-      li
-        strong = address.address_type.name
-        ':  
-        = address.street.titleize
-        ',
-        = address.city
-        ',
-        = address.state
-        ' 
-        = address.zip
-p
-table
-  tr
-    td = link_to 'Edit', edit_entry_path(@entry)
-    td = button_to 'Destroy', @entry, :method => :delete, :confirm => 'Are you sure?'
-    td = link_to 'Back', entries_path
+    - unless @entry.addresses.empty?
+      h2 Addresses:
+      - @entry.addresses.each do |address|
+        ul
+          li
+            strong = address.address_type.name
+            ':  
+            = address.street.titleize
+            ',
+            = address.city
+            ',
+            = address.state
+            ' 
+            = address.zip
+    p
+      table
+        tr
+          td = link_to 'Edit', edit_entry_path(@entry)
+          td = button_to 'Destroy', @entry, :method => :delete, :confirm => 'Are you sure?'
+          td = link_to 'Back', entries_path
