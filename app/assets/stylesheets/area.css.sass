@@ -36,12 +36,6 @@ footer
 body
   color: dimgrey  
 
-li
-  &.selected
-    color: $highlight
-    a
-      color: $highlight
-      font-weight: bold
 
 nav
   @include span-columns($nav-columns, $total-columns)
@@ -112,6 +106,12 @@ nav
         &.title
           font-style: italic
           font-size: 0.75em
+  li
+    &.selected
+      color: $highlight
+      a
+        color: $highlight !important
+        font-weight: bold !important
 
 article
   @include span-columns(17 omega, $total-columns)
@@ -129,6 +129,8 @@ article
     margin: 0.25em 0.5em 0.25em 0em
   h3
     font-style: italic
+  h2
+    margin-top: 0.25em
   p
     padding-left: 0em
     padding-right: 1em
