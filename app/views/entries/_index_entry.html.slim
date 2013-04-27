@@ -1,3 +1,9 @@
 - selected = @entry && @entry.id == entry.id
 li class=(selected ? 'selected' : '')
-  = link_to entry.name, entry_path(entry, search: params[:search])
+  = link_to entry_path(entry, search: params[:search]) do
+    #images
+      = avatar(entry,66)
+    #contacts
+      p = entry.name
+      p class="title"
+        = entry.title

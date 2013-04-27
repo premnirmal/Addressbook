@@ -1,9 +1,9 @@
-
-#avatar
+#titlename
   h1 #{@entry.name}
-  h3 #{@entry.title}
-  = avatar(@entry, 310)
-
+  p
+    h3 #{@entry.title}
+#avatar
+  = avatar(@entry, 345)
 #details
   - unless @entry.phonenumbers.empty?
     h2 Phonenumbers:

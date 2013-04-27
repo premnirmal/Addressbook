@@ -3,6 +3,19 @@
 #content
   @include container
 
+#titlename
+  h3
+    border-bottom: 1px solid lightgrey
+    margin-bottom: 0.5em
+  h1, h2, h3
+    padding: 0em
+    
+#avatar
+  @include span-columns($article-columns/2, $article-columns)
+#details
+  @include span-columns($article-columns/2 omega, $article-columns)
+
+
 header,footer
   clear: both
   background-color: $hf-background
@@ -23,12 +36,13 @@ footer
 body
   color: dimgrey  
 
-.selected
-  color: $highlight
-  a
-    color: $highlight !important
-    font-weight: bold
-    
+li
+  &.selected
+    color: $highlight
+    a
+      color: $highlight
+      font-weight: bold
+
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
@@ -45,7 +59,7 @@ nav
     width: 10em
   a
     color: darken($textcolor,10%)
-    padding: 0.5em
+    padding: 0em
   a:hover,active
     color: lighten(red,10%)
     font-weight: bold
@@ -82,10 +96,22 @@ nav
       color: lighten($textcolor, 10%)
     a:hover,active
       color: lighten(red,10%)
-      font-weight: bold
   ul#entries
     @include span-columns(5 omega,$nav-columns)
-    box-sizing: border-box
+    li
+      height: 55px
+      clear: both
+      box-sizing: border-box
+      #images
+        @include span-columns(2,5)
+      #contacts
+        @include span-columns(3 omega,5)
+      p
+        padding: 0em
+        margin: 0em
+        &.title
+          font-style: italic
+          font-size: 0.75em
 
 article
   @include span-columns(17 omega, $total-columns)
@@ -100,12 +126,9 @@ article
     padding: 0em 0em 0.25em 0em
     font-family: $article-font
   h1
-    margin: 1em 0.5em 0.25em 0em
-  h2
-    padding: 0.25em
+    margin: 0.25em 0.5em 0.25em 0em
   h3
-    font-weight: normal
-    border-bottom: solid 1px lightgrey
+    font-style: italic
   p
     padding-left: 0em
     padding-right: 1em
