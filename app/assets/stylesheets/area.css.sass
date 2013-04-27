@@ -14,6 +14,14 @@
   @include span-columns($article-columns/2, $article-columns)
 #details
   @include span-columns($article-columns/2 omega, $article-columns)
+.links
+  margin: 0.5em 1em 0.5em 0.5em
+  a
+    text-decoration: underline
+    color: $textcolor
+    font-size: 1.25em
+  a:hover,active
+    color: darkgreen
 
 
 header,footer
@@ -146,13 +154,3 @@ article
     color: $textcolor
   a:hover,active
     color: darkgreen
-
-  #links
-    a
-      text-decoration: underline
-      color: $textcolor
-      font-size: 1.25em
-    a:hover,active
-      color: darkgreen
-    td
-      padding: 0.25em
