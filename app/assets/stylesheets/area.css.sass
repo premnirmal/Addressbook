@@ -40,23 +40,20 @@ body
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
+  padding: 0.5em 1em 0em 0.5em
   font-family: $article-font
   background-color: $nav-color
-  height: 33em
-  overflow: scroll
-  border: solid 5px $nav-color
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
   input[type="search"]
     -webkit-appearance: searchfield
-    width: 10em
+    width: 242px
   a
     color: darken($textcolor,10%)
     padding: 0em
   a:hover,active
     color: lighten(red,10%)
-    font-weight: bold
   h1,h2,h3
     padding: 0.25em
     margin: 0em
@@ -64,6 +61,7 @@ nav
     border-bottom: 1px solid darkgrey
   h2,h3
     color: $textcolor
+    text-align: center
     a
       padding: 0.25em
       margin: 0em
@@ -79,6 +77,8 @@ nav
   ul#tab
     @include span-columns(1,$nav-columns)
     list-style-type: none
+    clear: both
+    margin-top: 0.2em
     li
       text-align: center
       border-left: 1px solid darkgrey
@@ -90,10 +90,20 @@ nav
       color: lighten($textcolor, 10%)
     a:hover,active
       color: lighten(red,10%)
+    li
+      &.selected
+        color: $highlight
+        a
+          color: $highlight !important
+          font-weight: bold !important
+
   ul#entries
+    height: 505px
+    overflow: scroll
+    margin: 0.2em 0em 0em 0em
     @include span-columns(5 omega,$nav-columns)
     li
-      height: 55px
+      height: 94px
       clear: both
       box-sizing: border-box
       #images
@@ -106,20 +116,16 @@ nav
         &.title
           font-style: italic
           font-size: 0.75em
-  li
-    &.selected
-      color: $highlight
+    li.selected
       a
-        color: $highlight !important
-        font-weight: bold !important
+        color: $highlight
 
 article
   @include span-columns(17 omega, $total-columns)
   margin: 1em 0em 0em 0em
   background-color: $article-bg
-  height: 35em
-  overflow: scroll
   color: $textcolor
+  min-height: 587px
   h1,h2,h3
     margin-top: 0em
     margin-bottom: 0em
