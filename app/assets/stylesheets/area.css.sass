@@ -11,9 +11,10 @@
     padding: 0em
     
 #avatar
-  @include span-columns($article-columns/2, $article-columns)
+  @include span-columns($article-columns*1/3, $article-columns)
+  clear: both
 #details
-  @include span-columns($article-columns/2 omega, $article-columns)
+  @include span-columns($article-columns*2/3 omega, $article-columns)
 .links
   margin: 0.5em 1em 0.5em 0.5em
   a

@@ -3,7 +3,7 @@ class Address < ActiveRecord::Base
   belongs_to :address_type
   attr_accessible :city, :state, :street, :zip, :entry_id, :address_type_id
   
-  validates :zip, :address_type_id, :presence => true
+  validates :zip, :address_type_id, :state, :presence => true
   validates_length_of :zip, is: 5
   validates_length_of :state, is: 2
   

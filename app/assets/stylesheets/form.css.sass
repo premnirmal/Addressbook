@@ -9,20 +9,23 @@
     input 
       border-bottom: solid 1px red
 
-  .entry_addresses_city, .entry_addresses_state, .entry_addresses_state
+  .entry_addresses_city, .entry_addresses_state, .entry_addresses_state, .entry_addresses_zip
     display: inline-block
 
   .required
     input, textarea
       border-bottom: solid 1px darkorange
-      
+  .entry_first_name, .entry_last_name, .entry_title
+    display: inline-block
+  association
+    display: inline-block
   input
     margin: 0.5em
     padding: 0.25em
     border: none
     border-bottom: solid 1px #E5E5E5
     outline: 0
-    width: 10em
+    max-width: 16em
 
   textarea
     margin: 0.5em
@@ -30,7 +33,7 @@
     border: none
     border-bottom: solid 1px #E5E5E5
     outline: 0
-    width: 10em
+    max-width: 16em
 
   input:hover, textarea:hover, input:focus, textarea:focus
     border: 1px

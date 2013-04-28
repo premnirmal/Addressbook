@@ -1,18 +1,9 @@
 .nested-fields
-  table
-    tr
-      td
-        = f.association :address_type, label: false
-      td
-        = f.check_box :_destroy
-        = f.label :_destroy, "Remove"
-    tr
-      td
-        = f.input :street, :input_html => {:style=> 'height: 50px'}, :placeholder => 'Street', label: false
-      td
-        = f.input :city, :placeholder => 'City', label: false
-    tr
-      td
-        = f.input :state, :placeholder => 'State', label: false, maxlength: 2
-      td
-        = f.input :zip, :placeholder => 'Zip', :as => :string, label: false
+  = f.association :address_type, label: false
+  = f.input :street, :input_html => {:style=> 'height: 50px'}, :placeholder => 'Street', label: false
+  = f.input :city, :placeholder => 'City', label: false
+  = f.input :state, :placeholder => 'State', label: false
+  = f.input :zip, :placeholder => 'Zip', :as => :string, label: false, :input_html => {:style => 'width: 25px'}
+  p
+    = f.check_box :_destroy
+    = f.label :_destroy, "Remove"
