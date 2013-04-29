@@ -1,7 +1,4 @@
 #article-head
-  #titlename
-    h1 #{@entry.name}
-    h3 #{@entry.title}
   #actions
     = link_to edit_entry_path(@entry) do
       i class="icon-edit icon-3x"
@@ -9,6 +6,9 @@
       i class="icon-trash icon-3x"
     = link_to entries_path do
       i class="icon-home icon-3x"
+  #titlename
+    h1 #{@entry.name}
+    h3 #{@entry.title}
 #avatar
   = avatar(@entry, 233)
 #details
