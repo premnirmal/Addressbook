@@ -1,5 +1,6 @@
 class Entry < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :title, :avatar, :avatar_cache
+  mount_uploader :avatar, AvatarUploader
 
   [:addresses, :emails, :weburls, :phonenumbers].each do |children|
     has_many children, dependent: :destroy

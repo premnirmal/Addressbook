@@ -4,6 +4,8 @@
     = f.input :first_name, :placeholder => 'First Name', label: false
     = f.input :last_name, :placeholder => 'Last Name', label: false
     = f.input :title, :placeholder => 'Job Title', label: false
+    = f.hidden_field(:avatar_cache)
+    = f.file_field(:avatar)
     hr
     h2 Contact info
     = f.simple_fields_for :phonenumbers do |phone|
