@@ -1,34 +1,14 @@
 @import base
 
-#content
-  @include container
-
-#titlename
-  @include span-columns(($article-columns*2/3)/2,$article-columns*2/3)
-#actions
-  @include span-columns(($article-columns*2/3)/2 omega,$article-columns*2/3)
-
 #icon
-  @include span-columns(1, $nav-columns)
   clear: both
 #label
-  @include span-columns($nav-columns - 1 omega, $nav-columns)
   font-weight: bold !important
   font-size: 1.25em
-  color: $textcolor
 #avatar
-  @include span-columns($article-columns*1/3, $article-columns)
   clear: both
-#details
-  @include span-columns($article-columns*2/3 omega, $article-columns)
-.links
-  margin: 0.5em 1em 0.5em 0.5em
-  a
-    text-decoration: none
-    padding: 0.5em
-  a:hover,active
-    color: lighten(red,10%)
-
+  text-align: center
+  margin-right: 0em
 header,footer
   clear: both
   background-color: $hf-background
@@ -37,6 +17,7 @@ header,footer
   -moz-border-radius: 10px
   border-radius: 10px
 header
+  color: $textcolor
   h1,h2
     padding: 0.25em
     margin: 0em 0em 0em 0em
@@ -46,15 +27,16 @@ footer
   text-align: right
   padding: 0.2em
   font-family: $h-font
+  color: $textcolor
 
 nav
-  @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
   padding: 0.5em 1em 0em 0.5em
   background-color: $nav-color
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
   border-radius: 10px
+  color: $textcolor
   input[type="search"]
     -webkit-appearance: searchfield
     width: 100%    
@@ -76,7 +58,6 @@ nav
     a
       text-decoration: none
   ul#tab
-    @include span-columns(1,$nav-columns)
     list-style-type: none
     clear: both
     margin-top: 0.2em
@@ -100,14 +81,9 @@ nav
     height: 505px
     overflow: scroll
     margin-top: 0.2em
-    @include span-columns(5 omega,$nav-columns)
     li
       height: 94px
       clear: both
-      #images
-        @include span-columns(2,5)
-      #contacts
-        @include span-columns(3 omega,5)
       p
         padding: 0em
         margin: 0em
@@ -119,7 +95,6 @@ nav
         color: $highlight
 
 article
-  @include span-columns(17 omega, $total-columns)
   margin: 1em 0em 0em 0em
   background-color: $article-bg
   color: $textcolor
@@ -130,7 +105,6 @@ article
     padding: 0em 0em 0.25em 0em
     font-family: $article-font
   h1
-    margin: 0.25em 0.5em 0.25em 0em
     line-height: 1em
   h3
     font-style: italic
@@ -159,3 +133,14 @@ article
     display: inline
     font-family: courier
     color: black
+  #article-head
+    border-bottom: solid 2px lightgrey
+    margin-bottom: 0.5em
+    #actions, #titlename
+      margin: 0.25em 0em 0em 0em
+      text-align: center
+      a
+        text-decoration: none
+        padding: 0.5em 1em 0.5em 1em
+      a:hover,active
+        color: lighten(red,10%)

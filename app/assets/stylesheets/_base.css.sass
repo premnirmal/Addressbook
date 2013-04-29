@@ -21,3 +21,33 @@ $h-font: futura
 $article-font: hevletica
 $highlight: orange
 
+#content
+  @include container
+
+nav
+  @include span-columns($nav-columns, $total-columns)
+  #icon
+    @include span-columns(1, $nav-columns)
+  #label
+    @include span-columns($nav-columns - 1 omega, $nav-columns)
+  ul#tab
+    @include span-columns(1,$nav-columns)
+  ul#entries
+    @include span-columns(5 omega,$nav-columns)
+    #images
+      @include span-columns(2,5)
+    #contacts
+      @include span-columns(3 omega,5)
+
+article
+  @include span-columns(17 omega, $total-columns)
+  #article-head
+    @include span-columns($article-columns, $article-columns)
+  #avatar
+    @include span-columns($article-columns*1/3, $article-columns)
+  #details
+    @include span-columns($article-columns*2/3 omega, $article-columns)
+  #titlename
+    @include span-columns(($article-columns*1/3),$article-columns)
+  #actions
+    @include span-columns(($article-columns*2/3) omega,$article-columns)

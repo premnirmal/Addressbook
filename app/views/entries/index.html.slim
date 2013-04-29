@@ -1,14 +1,24 @@
-#homeheader
-  h1 What do you think of this app?
-  i class="icon-thumbs-up icon-2x"
-
 hr
 h3 Professor Frankel:
 ' Please run 
 #code
   'rspec spec
 ' to run the tests.
+br
+'Unit tests:
+#code
+  'rspec spec/models
+br
+'Functional tests:
+#code
+  'rspec spec/controllers
+
 hr
+
+#homeheader
+  h1 What do you think of this app?
+  ' 
+  i class="icon-thumbs-up icon-2x"
 
 == render 'feedbacks/form', :locals => {:feedback => @feedback}
 
