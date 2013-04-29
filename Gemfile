@@ -9,6 +9,7 @@ gem 'compass'
 gem 'compass-normalize'
 gem 'faker'
 gem 'validates_email_format_of', :git => 'https://github.com/jonathantribouharet/validates_email_format_of'
+gem 'font-awesome-rails'
 
 gem 'carrierwave'
 gem 'cloudinary'

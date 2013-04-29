@@ -1,5 +1,13 @@
-center
-  h3 = link_to 'New Contact', new_entry_path
+= link_to (new_entry_path) do
+  #icon
+    center
+      i class="icon-plus-sign icon-large"
+  #label
+    ' New Entry
+#icon
+  center
+    i class="icon-search icon-large"
+#label
   = form_tag entries_path, method: 'get' do
     = text_field_tag :search, params[:search], type: :search, :placeholder => ' Search Here'
 ul#tab

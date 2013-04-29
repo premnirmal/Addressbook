@@ -1,8 +1,7 @@
-h1 Editing entry
+#link
+  = link_to @entry do
+    i class="icon-arrow-left icon-2x"
+    ' 
+  h1 Editing entry
 
 = render :partial => 'form'
-
-= link_to 'Show', @entry
-'   |   
-= link_to 'Back', entries_path
-

@@ -4,6 +4,7 @@
     = f.input :first_name, :placeholder => 'First Name', label: false
     = f.input :last_name, :placeholder => 'Last Name', label: false
     = f.input :title, :placeholder => 'Job Title', label: false
+    i class="icon-camera-retro icon-large"
     = f.hidden_field(:avatar_cache)
     = f.file_field(:avatar)
     hr
@@ -20,6 +21,7 @@
       = render 'addresses/address_fields', :f => address
   .form-actions
     p
+      = link_to entries_path do
+        i class="icon-home icon-2x"
+      ' 
       = f.button :submit
-      '  
-      = link_to 'Back', entries_path

@@ -4,12 +4,18 @@
   @include container
 
 #titlename
-  h3
-    border-bottom: 1px solid lightgrey
-    margin-bottom: 0.5em
-  h1, h2, h3
-    padding: 0em
-    
+  @include span-columns(($article-columns*2/3)/2,$article-columns*2/3)
+#actions
+  @include span-columns(($article-columns*2/3)/2 omega,$article-columns*2/3)
+
+#icon
+  @include span-columns(1, $nav-columns)
+  clear: both
+#label
+  @include span-columns($nav-columns - 1 omega, $nav-columns)
+  font-weight: bold !important
+  font-size: 1.25em
+  color: $textcolor
 #avatar
   @include span-columns($article-columns*1/3, $article-columns)
   clear: both
@@ -18,12 +24,10 @@
 .links
   margin: 0.5em 1em 0.5em 0.5em
   a
-    text-decoration: underline
-    color: $textcolor
-    font-size: 1.25em
+    text-decoration: none
+    padding: 0.5em
   a:hover,active
-    color: darkgreen
-
+    color: lighten(red,10%)
 
 header,footer
   clear: both
@@ -37,20 +41,16 @@ header
     padding: 0.25em
     margin: 0em 0em 0em 0em
     font-family: $h-font
+    display: inline
 footer
   text-align: right
   padding: 0.2em
   font-family: $h-font
 
-body
-  color: dimgrey  
-
-
 nav
   @include span-columns($nav-columns, $total-columns)
   margin: 1em 0em 1em 0em
   padding: 0.5em 1em 0em 0.5em
-  font-family: $article-font
   background-color: $nav-color
   -webkit-border-radius: 10px
   -moz-border-radius: 10px
@@ -66,15 +66,8 @@ nav
   h1,h2,h3
     padding: 0.25em
     margin: 0em
-  h2
-    border-bottom: 1px solid darkgrey
   h2,h3
     color: $textcolor
-    a
-      padding: 0.25em
-      margin: 0em
-      color: $textcolor
-      text-decoration: underline !important
   ul,li
     padding: 0em
     margin: 0
@@ -96,8 +89,6 @@ nav
       font-size: 0.75em
       line-height: 0.5em
       color: lighten($textcolor, 10%)
-    a:hover,active
-      color: lighten(red,10%)
     li
       &.selected
         color: $highlight
@@ -113,7 +104,6 @@ nav
     li
       height: 94px
       clear: both
-      box-sizing: border-box
       #images
         @include span-columns(2,5)
       #contacts
@@ -146,12 +136,21 @@ article
   h2
     margin-top: 0.25em
   ul
-    line-height: 1.2em
-    margin: 0.25em
-    padding-left: 1.5em
+    margin: 0.75em 0.75em 0.75em 0em
+    padding-left: 1em
     list-style-type: none
   a
     text-decoration: underline
     color: $textcolor
   a:hover,active
     color: darkgreen
+  p
+    a
+      text-decoration: none
+  #link
+    a
+      text-decoration: none
+    a:hover,active
+      color: lighten(red,10%)
+    h1
+      display: inline

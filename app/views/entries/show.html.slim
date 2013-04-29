@@ -3,52 +3,77 @@
 #details
   #titlename
     h1 #{@entry.name}
-    p
-      h3 #{@entry.title}
+    h3 #{@entry.title}
+  #actions
+    div class="links"
+      = link_to edit_entry_path(@entry) do
+        i class="icon-edit icon-3x"
+      = link_to @entry, confirm: 'Are you sure?', method: :delete do
+        i class="icon-trash icon-3x"
+      = link_to entries_path do
+        i class="icon-home icon-3x"
+hr
+#details
   - unless @entry.phonenumbers.empty?
-    h2 Phonenumbers:
-    - @entry.phonenumbers.each do |ph|
-      ul
-        li
-          strong = ph.address_type.name
-          ': 
-          = number_to_phone(ph.name, :area_code => true)
+    table
+      tr
+        td width="50px"
+          center
+            i class="icon-phone icon-2x"
+        td
+          - @entry.phonenumbers.each do |ph|
+            ul
+              li
+                strong = ph.address_type.name
+                ': 
+                = number_to_phone(ph.name, :area_code => true)
 
   - unless @entry.emails.empty?
-    h2 Emails: 
-    - @entry.emails.each do |em|
-      ul
-        li
-          strong = em.address_type.name
-          ': 
-          = link_to em.name, em.to_email
+    table
+      tr
+        td width="50px"
+          center
+            i class="icon-envelope icon-2x"
+        td
+          - @entry.emails.each do |em|
+            ul
+              li
+                strong = em.address_type.name
+                ': 
+                = link_to em.name, em.to_email
 
   - unless @entry.weburls.empty?
-    h2 Websites: 
-    - @entry.weburls.each do |w|
-      ul
-        li 
-          strong = w.address_type.name 
-          ':  
-          = link_to w.name, w.to_url
+    table
+      tr
+        td width="50px"
+          center
+            i class="icon-laptop icon-2x"
+        td
+          - @entry.weburls.each do |w|
+            ul
+              li 
+                strong = w.address_type.name 
+                ':  
+                = link_to w.name, w.to_url
     
   - unless @entry.addresses.empty?
-    h2 Addresses:
-    - @entry.addresses.each do |address|
-      ul
-        li
-          strong = address.address_type.name
-          ':  
-          = address.street.titleize
-          ',
-          = address.city
-          ',
-          = address.state
-          ' 
-          = address.zip
-  div class="links"
-    = link_to 'Edit', edit_entry_path(@entry)
-    '  |
-    = button_to 'Destroy', @entry, :method => :delete, :confirm => 'Are you sure?'
-    '  |
-    = link_to 'Back', entries_path
+    table
+      tr
+        td width="50px"
+          center
+            i class="icon-building icon-2x"
+        td
+          - @entry.addresses.each do |address|
+            ul
+              li
+                strong = address.address_type.name
+                strong
+                ' :  
+                = address.street.titleize
+                ',
+                = address.city
+                ',
+                = address.state
+                ' 
+                = address.zip
+
