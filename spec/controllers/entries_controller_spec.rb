@@ -6,7 +6,11 @@ describe EntriesController do
   describe "GET #index" do
     it "populates an array of entries in ascending order by last name" do
       entry = FactoryGirl.create(:entry)
+      entry.last_name = 'Alba'
+      entry.save
       entry2 = FactoryGirl.create(:entry)
+      entry2.last_name = 'Arlington'
+      entry2.save
       get :index
       assigns(:entries).should eq([entry, entry2].sort{|a,b| a.last_name <=> b.last_name})
     end
